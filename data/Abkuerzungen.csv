@@ -1,4 +1,4 @@
-rdf ID,rdf Label1,rdf Label2,rdf comment,rdf-class,rdf-class
+rdfID,rdfLabel1,rdfLabel2,rdfComment,rdf-class1,rdf-class2
 bf,BF,Berufsfeuerwehr,,Hilfsorganisation,
 btf,BtF,Betriebsfeuerwehr,,Hilfsorganisation,
 betrfw,BetrFW,Betriebsfeuerwehr,,Hilfsorganisation,
@@ -307,7 +307,7 @@ mzb,MZB,Mehrzweckboot,,Feuerwehrfahrzeug,
 mzf,MZF,Mehrzweckfahrzeug,,Feuerwehrfahrzeug,
 ösa,ÖSA,Ölschadenanhänger,,Anhängerfahrzeug,
 öswf,ÖSWF,Ölspur-Waschsaugfahrzeug ,,Feuerwehrfahrzeug,
-p 250,P 250,Pulverlöschanhänger mit 250 kg Pulver,,Feuerwehrfahrzeug,
+p250,P 250,Pulverlöschanhänger mit 250 kg Pulver,,Feuerwehrfahrzeug,
 pkw,PKW,Personenkraftwagen (z.B. für Einsatzleiter),,Feuerwehrfahrzeug,
 plf,PLF,Pulverlöschfahrzeug (TroLF),,Feuerwehrfahrzeug,
 ptlf,PTLF,Pulvertanklöschfahrzeug (TroTLF),,Feuerwehrfahrzeug,
