@@ -1,0 +1,69 @@
+@prefix so: <http://solide-projekt.de/ontology/> .
+@prefix xsd: <https://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+so:nachricht a rdfs:Class;
+	rdfs:label "Nachricht";
+	rdfs:comment "Diese Klasse ist die Oberklasse aller Nachrichten" . 
+
+so:kommunikator a rdfs:Class;
+	rdfs:label "Kommunikator";
+	rdfs:comment "Diese Klasse ist die Oberklasse aller Benutzer die Meldungen senden und empfangen." .
+
+so:sender rdfs:subClassOf so:kommunikator;
+	rdfs:label "Sender";
+	rdfs:comment "Diese Klasse ist für die Sender der Nachricht" .
+
+so:empfaenger rdfs:subClassOf so:kommunikator;
+	rdfs:label "Empfänger";
+	rdfs:comment "Diese Klasse ist für die Empfänger der Nachricht" .
+
+so:betreff a rdf:Property;
+	rdfs:label "Nachrichtenbetreff", "Betreff";
+	rdfs:comment "Betreff der Meldung oder Nachricht";
+	rdfs:domain so:nachricht;
+	rdfs:range xsd:string .
+
+so:meldung a rdf:Property;
+	rdfs:label "Meldung", "Email", "Meldungstext";
+	rdfs:comment "Die eigentliche Meldung oder Nachricht";
+	rdfs:domain so:nachricht;
+	rdfs:range xsd:string .
+
+so:status a rdf:Property;
+	rdfs:label "Status";
+	rdfs:comment "Status der Nachricht";
+	rdfs:domain so:nachricht;
+	rdfs:range xsd:string .
+
+so:lagevortrag a rdf:Property;
+	rdfs:label "Lagevortrag";
+	rdfs:comment "Lagevortrag der Nachricht";
+	rdfs:domain so:nachricht;
+	rdfs:range xsd:boolean .
+
+so:pressetauglich a rdf:Property;
+	rdfs:label "Pressetauglich";
+	rdfs:comment "Pressetauglichkeit der Nachricht";
+	rdfs:domain so:nachricht;
+	rdfs:range xsd:boolean .
+
+so:nachrichtVersenden a rdf:Property;
+	rdfs:label "Nachricht senden";
+	rdfs:comment "Senden einer Nachricht";
+	rdfs:domain so:sender;
+	rdfs:range so:nachricht .
+
+so:nachrichtEmpfangen a rdf:Property;
+	rdfs:label "Nachricht empfangen";
+	rdfs:comment "Empfangen einer Nachricht";
+	rdfs:domain so:nachricht;
+	rdfs:range so:empfaenger .
+
+so:zeitGesendet a rdf:Property;
+    rdfs:label "Uhrzeit des Nachrichtenversandes";
+    rdfs:comment "Dieses Datum wird gesetzt, wenn eine neue Nachricht gesendet wird";
+    rdfs:domain so:nachricht;
+    rdfs:range xsd:datetime .
