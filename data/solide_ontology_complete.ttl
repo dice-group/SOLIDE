@@ -96,11 +96,11 @@ so:Kommunikator a rdfs:Class;
 	rdfs:label "Kommunikator";
 	rdfs:comment "Diese Klasse ist die Oberklasse aller Benutzer die Meldungen senden und empfangen." .
 
-so:Sender rdfs:subClassOf so:kommunikator;
+so:Sender rdfs:subClassOf so:Kommunikator;
 	rdfs:label "Sender";
 	rdfs:comment "Diese Klasse ist für die Sender der Nachricht" .
 
-so:Empfaenger rdfs:subClassOf so:kommunikator;
+so:Empfaenger rdfs:subClassOf so:Kommunikator;
 	rdfs:label "Empfänger";
 	rdfs:comment "Diese Klasse ist für die Empfänger der Nachricht" .
 
@@ -215,27 +215,29 @@ so:hatEinsatzort a rdf:Property;
 	rdfs:domain so:Einsatzabschnitt;
 	rdfs:range so:Einsatzort .
 
-<http://www.solide-projekt.de/resource/Institution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Organisation> .
-<http://www.solide-projekt.de/resource/Hubrettungsfahrzeug> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Feuerwehrfahrzeug> .
-<http://www.solide-projekt.de/resource/Informationssystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Objekt> .
-<http://www.solide-projekt.de/resource/Löschfahrzeug> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Feuerwehrfahrzeug> .
-<http://www.solide-projekt.de/resource/Vorschrift> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Objekt> .
-<http://www.solide-projekt.de/resource/Einrichtung> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Organisation> .
-<http://www.solide-projekt.de/resource/Straße> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Ort> .
-<http://www.solide-projekt.de/resource/Hilfsorganisation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Organisation> .
-<http://www.solide-projekt.de/resource/Anhängerfahrzeug> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Feuerwehrfahrzeug> .
-<http://www.solide-projekt.de/resource/Abkürzung> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Objekt> .
-<http://www.solide-projekt.de/resource/Flugzeug> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Fahrzeug> .
-<http://www.solide-projekt.de/resource/Eisenbahn> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Fahrzeug> .
-<http://www.solide-projekt.de/resource/Rettungsdienstfahrzeug> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Fahrzeug> .
-<http://www.solide-projekt.de/resource/Maßeinheit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Objekt> .
-<http://www.solide-projekt.de/resource/Schiff> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Fahrzeug> .
-<http://www.solide-projekt.de/resource/Organisation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Organisation> .
-<http://www.solide-projekt.de/resource/Führungsstelle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Organisation> .
-<http://www.solide-projekt.de/resource/Gerät> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Objekt> .
-<http://www.solide-projekt.de/resource/Feuerwehrfahrzeug> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Fahrzeug> .
-<http://www.solide-projekt.de/resource/Gruppe> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Person> .
-<http://www.solide-projekt.de/resource/Stelle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Organisation> .
-<http://www.solide-projekt.de/resource/RüstGerätewagen> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Feuerwehrfahrzeug> .
-<http://www.solide-projekt.de/resource/Einsatzkraft> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Person> .
-<http://www.solide-projekt.de/resource/Musikkapelle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.solide-projekt.de/resource/Gruppe> .
+<http://solide-projekt.de/ontology/Institution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Organisation> .
+<http://solide-projekt.de/ontology/Hubrettungsfahrzeug> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Feuerwehrfahrzeug> .
+<http://solide-projekt.de/ontology/Informationssystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Objekt> .
+<http://solide-projekt.de/ontology/Löschfahrzeug> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Feuerwehrfahrzeug> .
+<http://solide-projekt.de/ontology/Vorschrift> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Objekt> .
+<http://solide-projekt.de/ontology/Einrichtung> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Organisation> .
+<http://solide-projekt.de/ontology/Straße> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Einsatzort> .
+<http://solide-projekt.de/ontology/Einsatzort> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Objekt> .
+<http://solide-projekt.de/ontology/Hilfsorganisation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Organisation> .
+<http://solide-projekt.de/ontology/Anhängerfahrzeug> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Feuerwehrfahrzeug> .
+<http://solide-projekt.de/ontology/Abkürzung> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Objekt> .
+<http://solide-projekt.de/ontology/Flugzeug> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Fahrzeug> .
+<http://solide-projekt.de/ontology/Eisenbahn> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Fahrzeug> .
+<http://solide-projekt.de/ontology/Rettungsdienstfahrzeug> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Fahrzeug> .
+<http://solide-projekt.de/ontology/Maßeinheit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Objekt> .
+<http://solide-projekt.de/ontology/Schiff> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Fahrzeug> .
+<http://solide-projekt.de/ontology/Organisation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Objekt> .
+<http://solide-projekt.de/ontology/Führungsstelle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Organisation> .
+<http://solide-projekt.de/ontology/Gerät> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Objekt> .
+<http://solide-projekt.de/ontology/Feuerwehrfahrzeug> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Fahrzeug> .
+<http://solide-projekt.de/ontology/Gruppe> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Person> .
+<http://solide-projekt.de/ontology/Stelle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Organisation> .
+<http://solide-projekt.de/ontology/RüstGerätewagen> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Feuerwehrfahrzeug> .
+<http://solide-projekt.de/ontology/Einsatzkraft> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Person> .
+<http://solide-projekt.de/ontology/Musikkapelle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Gruppe> .
+<http://solide-projekt.de/ontology/Fahrzeug> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://solide-projekt.de/ontology/Objekt> .
