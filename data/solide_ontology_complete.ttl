@@ -22,19 +22,19 @@ so:statusAenderung a rdf:Property;
     rdfs:domain so:Einsatzkraft ;
     rdfs:range so:EinsatzStatus.
 
-so:datumzeit a rdf:Property;
+so:datumzeit a owl:DatatypeProperty;
     rdfs:label "Uhrzeit der Meldung";
     rdfs:comment "Dieses Datum wird gesetzt, wenn eine Einheit seinen Einsatzstatus verändert";
     rdfs:domain so:EinsatzStatus;
     rdfs:range xsd:datetime .
 
-so:takteinheit a rdf:Property;
+so:takteinheit a owl:DatatypeProperty;
     rdfs:label "Name der Einheit";
     rdfs:comment "Nicht-normalisierter, taktischer Einheitsname, z.B. ELW 2 Florian Hameln 89-12-1";
     rdfs:domain so:Einsatzkraft;
     rdfs:range xsd:string .
 
-so:funkbos a rdf:Property;
+so:funkbos a owl:DatatypeProperty;
     rdfs:label "Funkname der Einheit";
     rdfs:comment "Nicht-normalisierter Funkname, z.B. Florian Hameln 89-12-1 oder Florian Hameln 89/12/1 oder Florian Hameln 89/12";
     rdfs:domain so:Einsatzkraft;
@@ -46,43 +46,43 @@ so:einsatzabschnitt a rdf:Property;
     rdfs:domain so:EinsatzStatus;
     rdfs:range  so:Einsatzort .
 
-so:einsatzbefehl a rdf:Property;
+so:einsatzbefehl a owl:DatatypeProperty;
     rdfs:label "Befehl für die Einheit";
     rdfs:comment "Ein Befehl beschreibt die Aufgabe, die eine Einheit zu diesem Zeitpunkt zu erfüllen hat, z.B. EA2 Gemeinde Aerzen";
     rdfs:domain so:Einsatzkraft;
     rdfs:range xsd:string .
 
-so:einsatzstärkeführer  a rdf:Property;
+so:einsatzstärkeführer  a owl:DatatypeProperty;
     rdfs:label "Einsatzstärke der Führer";
     rdfs:comment "Anzahl der Führer in dieser Einheit, z.B. 1";
     rdfs:domain so:Einsatzkraft;
     rdfs:range xsd:integer .
 
-so:einsatzstärkeunterführer  a rdf:Property;
+so:einsatzstärkeunterführer  a owl:DatatypeProperty;
     rdfs:label "Einsatzstärke der Unterführer";
     rdfs:comment "Anzahl der Unterführer in dieser Einheit, z.B. 2";
     rdfs:domain so:Einsatzkraft;
     rdfs:range xsd:integer .
 
-so:einsatstärkemannschaft  a rdf:Property;
+so:einsatstärkemannschaft  a owl:DatatypeProperty;
     rdfs:label "Einsatstärke der Mannschaft";
     rdfs:comment "Anzahl der Unterführer in dieser Einheit, z.B. 7";
     rdfs:domain so:Einsatzkraft;
     rdfs:range xsd:integer .
 
-so:patraeger  a rdf:Property;
+so:patraeger  a owl:DatatypeProperty;
     rdfs:label "Pressluftatmerträger";
     rdfs:comment "Anzahl der PA-Träger, z.B. 3";
     rdfs:domain so:Einsatzkraft;
     rdfs:range xsd:integer .
 
-so:status a rdf:Property;
+so:status a owl:DatatypeProperty;
     rdfs:label "Status der Einheit";
     rdfs:comment "Enumeration des Status zwischen 0 und 4. 0 bedeuted Bereitgestellt, 1 auf Marsch, 2 im Einsatz, 3 und 4.";
     rdfs:domain so:EinsatzStatus;
     rdfs:range xsd:string .
 
-so:einsatzmittel a rdf:Property;
+so:einsatzmittel a owl:DatatypeProperty;
     rdfs:label "Einsatzmittel der Einheit";
     rdfs:comment "Einsatzmittel welche diese Einheit mitführt z.B. Türöffner";
     rdfs:domain so:Einsatzkraft;
@@ -105,7 +105,7 @@ so:Empfaenger rdfs:subClassOf so:Kommunikator;
 	rdfs:label "Empfänger";
 	rdfs:comment "Diese Klasse ist für die Empfänger der Nachricht" .
 
-so:betreff a rdf:Property;
+so:betreff a owl:DatatypeProperty;
 	rdfs:label "Nachrichtenbetreff", "Betreff";
 	rdfs:comment "Betreff der Meldung oder Nachricht";
 	rdfs:domain so:Nachricht;
@@ -117,19 +117,19 @@ so:meldung a rdf:Property;
 	rdfs:domain so:Nachricht;
 	rdfs:range xsd:string .
 
-so:status a rdf:Property;
+so:status a owl:DatatypeProperty;
 	rdfs:label "Status";
 	rdfs:comment "Status der Nachricht";
 	rdfs:domain so:Nachricht;
 	rdfs:range xsd:string .
 
-so:lagevortrag a rdf:Property;
+so:lagevortrag a owl:DatatypeProperty;
 	rdfs:label "Lagevortrag";
 	rdfs:comment "Lagevortrag der Nachricht";
 	rdfs:domain so:Nachricht;
 	rdfs:range xsd:boolean .
 
-so:pressetauglich a rdf:Property;
+so:pressetauglich a owl:DatatypeProperty;
 	rdfs:label "Pressetauglich";
 	rdfs:comment "Pressetauglichkeit der Nachricht";
 	rdfs:domain so:Nachricht;
@@ -147,7 +147,7 @@ so:nachrichtEmpfangen a rdf:Property;
 	rdfs:domain so:Nachricht;
 	rdfs:range so:Empfaenger .
 
-so:zeitGesendet a rdf:Property;
+so:zeitGesendet a owl:DatatypeProperty;
     rdfs:label "Uhrzeit des Nachrichtenversandes";
     rdfs:comment "Dieses Datum wird gesetzt, wenn eine neue Nachricht gesendet wird";
     rdfs:domain so:Nachricht;
@@ -180,19 +180,19 @@ so:hatOberabschnitt a rdf:Property;
 so:hatUnterabschnitt a rdf:Property;
 	owl:inverseOf: so:hatOberabschnitt .
 
-so:funkbos a rdf:Property;
+so:funkbos a owl:DatatypeProperty;
 	rdfs:label "Funkname der Einheit";
 	rdfs:comment "Nicht-normalisierter Funkname, z.B. Florian Hameln 89-12-1 oder Florian Hameln 89/12/1 oder Florian Hameln 89/12";
 	rdfs:domain so:Leiter;
 	rdfs:range xsd:string .
 
-so:funkkanal a rdf:Property;
+so:funkkanal a owl:DatatypeProperty;
 	rdfs:label "Funkkanal";
 	rdfs:comment "Funkkanal oder Rufgruppe des Abschnittsleiters";
 	rdfs:domain so:Leiter;
 	rdfs:range xsd:string .
 
-so:telefon a rdf:Property;
+so:telefon a owl:DatatypeProperty;
 	rdf:label "Telefonnummer";
 	rdf:comment "Telefonnummer des Abschnittleiters";
 	rdfs:domain so:Leiter;
