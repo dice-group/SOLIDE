@@ -22,7 +22,7 @@ so:statusAenderung a rdf:Property;
     rdfs:domain so:Einsatzkraft ;
     rdfs:range so:EinsatzStatus.
 
-so:datumzeit a owl:DatatypeProperty;
+so:datumzeit rdf:type owl:DatatypeProperty;
     rdfs:label "Uhrzeit der Meldung";
     rdfs:comment "Dieses Datum wird gesetzt, wenn eine Einheit seinen Einsatzstatus verändert";
     rdfs:domain so:EinsatzStatus;
