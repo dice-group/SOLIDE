@@ -235,6 +235,11 @@ so:Leiter a rdfs:Class;
 	rdfs:label "Leiter", "Führer";
 	rdfs:comment "Die Klasse definiert den Führer des Einsatzabschnittes" .
 
+so:einteilungDesEinsatzes a rdf:Property;
+	rdfs:label "Einteilung des Einsatzes";
+	rdfs:comment "Zuordnung der Einsatzabschnitte zum Einsatz";
+	rdfs:domain so:Einsatz;
+	rdfs:range so:Einsatzabschnitt.
 
 so:hatOberabschnitt a rdf:Property;
 	rdfs:label "hat Oberabschnitt";
