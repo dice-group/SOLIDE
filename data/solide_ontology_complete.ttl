@@ -4,11 +4,23 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
+so:_X a rdfs:Class;
+	rdfs:label "X";
+	rdfs:comment "Der Knoten hat einen Status aus einer Collection".
+
+so:Stammdaten a rdfs:Class;
+	rdfs:label "Stammdaten";
+	rdfs:comment "Diese Klasse repräsentiert die Stammdaten. Ihr sind alle Einsätze zugeordnet".
+
+so:Einsatz a rdfs:Class;
+	rdfs:label "Einsatz";
+	rdfs:comment "Oberklasse aller Einsätze".
+
 so:Einsatzkraft a rdfs:Class;
     rdfs:label "Einsatzkraft";
     rdfs:comment "Diese Klasse ist die Oberklasse aller Einsatzkräfte, egal ob Person oder Fahrzeug". 
 
-so:EinsatzStatus a rdfs:Class;
+so:Einsatzstatus a rdfs:Class;
 	rdfs:label "Einsatzstatus";
     rdfs:comment "Diese Klasse ist die Oberklasse aller Einsatzstatusmeldungen. Immer wenn eine Einheit 'verschoben' wird, erzeugt sie einen neuen Einsatzstatus.". 
 
@@ -16,16 +28,30 @@ so:Einsatzort a rdfs:Class;
     rdfs:label "Einsatzort";
     rdfs:comment "Diese Klasse ist die Oberklasse aller Einsatzorte als URI damit es eindeutig ist, zb: http://dbpedia.org/resource/University_of_Paderborn". 
 
+so:statusInt rdf:type owl:DatatypeProperty;
+	owl:oneOf ("1" "2" "3" "4" "5");
+	rdfs:comment "Dies ist eine Collection. Ein Status darf nur 1, 2,3,4 oder 5 sein".
+
 so:statusAenderung a rdf:Property;
     rdfs:label "Einsatzstatusänderung";
     rdfs:comment "Diese Property verbindet eine Einehit mit all ihren Einsatzstatusänderungen.";
-    rdfs:domain so:Einsatzkraft ;
-    rdfs:range so:EinsatzStatus.
+    rdfs:domain so:_X ;
+    rdfs:range so:statusInt.
+
+so:hatStatus a rdf:Property;
+	rdfs:label "Status der Resource";
+	rdfs:domain so:Einsatzkraft;
+	rdfs:range so:Einsatzstatus.
+
+so:hatStatus2 a rdf:Property;
+	rdfs:label "Statusänderung Datum/Status";
+	rdfs:domain so:Einsatzstatus;
+	rdfs:range so:_X.
 
 so:datumzeit rdf:type owl:DatatypeProperty;
-    rdfs:label "Uhrzeit der Meldung";
+    rdfs:label "Datum/Uhrzeit";
     rdfs:comment "Dieses Datum wird gesetzt, wenn eine Einheit seinen Einsatzstatus verändert";
-    rdfs:domain so:EinsatzStatus;
+    rdfs:domain so:_X;
     rdfs:range xsd:dateTime .
 
 so:takteinheit a owl:DatatypeProperty;
@@ -43,7 +69,7 @@ so:funkbos a owl:DatatypeProperty;
 so:einsatzabschnitt a rdf:Property;
     rdfs:label "Einsatzabschnitt einer Einheit";
     rdfs:comment "Ort an dem sich eine Einheit befindet";
-    rdfs:domain so:EinsatzStatus;
+    rdfs:domain so:Einsatzkraft;
     rdfs:range  so:Einsatzort .
 
 so:einsatzbefehl a owl:DatatypeProperty;
@@ -76,11 +102,7 @@ so:patraeger  a owl:DatatypeProperty;
     rdfs:domain so:Einsatzkraft;
     rdfs:range xsd:integer .
 
-so:status a owl:DatatypeProperty;
-    rdfs:label "Status der Einheit";
-    rdfs:comment "Enumeration des Status zwischen 0 und 4. 0 bedeuted Bereitgestellt, 1 auf Marsch, 2 im Einsatz, 3 und 4.";
-    rdfs:domain so:EinsatzStatus;
-    rdfs:range xsd:string .
+
 
 so:einsatzmittel a owl:DatatypeProperty;
     rdfs:label "Einsatzmittel der Einheit";
@@ -88,6 +110,47 @@ so:einsatzmittel a owl:DatatypeProperty;
     rdfs:domain so:Einsatzkraft;
     rdfs:range xsd:string .
 
+so:typ a rdf:Property;
+	rdfs:label "Typ der Einsatzkraft";
+	rdfs:comment "Der Einsatzkraft wird ein Typ zugeordnet. z.B. EWL";
+	rdfs:domain so:Einsatzkraft;
+	rdfs:range so:Fahrzeug.
+
+so:hatEinsätze a rdf:Property;
+	rdfs:label "Hat Einsätze";
+	rdfs:comment "Stammdaten haben Einsätze";
+	rdfs:domain so:Stammdaten;
+	rdfs:range so:Einsatz.
+
+so:hatEinsatzkräfte a rdf:Property;
+	rdfs:label "Einsatzkräfte des Einsatzes";
+	rdfs:comment "Alle Einsatzkräfte, die einem Einsatz zugeordnet sind werden hier abgebildet";
+	rdfs:domain so:Einsatz;
+	rdfs:range so:Einsatzkraft.
+
+so:NameDerInstitution a rdf:Property;
+	rdfs:label "Name der Institution";
+	rdfs:comment "Der Name der Institution, die die Software einsätzt";
+	rdfs:domain so:Stammdaten;
+	rdfs:range xsd:string.
+
+so:AdresseDerInstitution a rdf:Property;
+	rdfs:label "Adresse der Institution";
+	rdfs:comment "Die Adresse der Institution, die die Software einsätzt";
+	rdfs:domain so:Stammdaten;
+	rdfs:range so:Adresse.
+
+so:datumzeit rdf:type owl:DatatypeProperty;
+    rdfs:label "Datum des Einsatzes";
+    rdfs:comment "Datum und Uhrzeit an dem der Einsatz angelegt wurde";
+    rdfs:domain so:Einsatz;
+    rdfs:range xsd:dateTime .
+
+so:NameDesEinsatzes a rdf:Property;
+	rdfs:label "Name des Einsatzes";
+	rdfs:comment "Der Name unter dem der Einsatz geführt wird";
+	rdfs:domain so:Einsatz;
+	rdfs:range xsd:string.
 
 so:Nachricht a rdfs:Class;
 	rdfs:label "Nachricht";
@@ -151,16 +214,18 @@ so:zeitGesendet a owl:DatatypeProperty;
     rdfs:label "Uhrzeit des Nachrichtenversandes";
     rdfs:comment "Dieses Datum wird gesetzt, wenn eine neue Nachricht gesendet wird";
     rdfs:domain so:Nachricht;
-    rdfs:range xsd:datetime .
+    rdfs:range xsd:dateTime .
 
+so:einsatzNachricht a rdf:Property;
+	rdfs:label "Nachrichten des Einsatzes";
+	rdfs:comment "Zu jedem Einsatz gehören Meldungen/Nachrichten";
+	rdfs:domain so:Einsatz;
+	rdfs:range so:Nachricht.
 
 so:Einsatzabschnitt a rdfs:Class;
 	rdfs:label "Einsatzabschnitt";
-	rdfs:comment "Diese Klasse definiert einen Einsatzabschnitt  -existiert schon als Property". 
-
-so:Einsatzort a rdfs:Class;
-	rdfs:label "Einsatzort";
-	rdfs:comment "Die Klasse definiert den Ort des Einsatzabschnittes - die Klasse existiert schon " .	
+	rdfs:comment "Diese Klasse definiert einen Einsatzabschnitt". 
+	
 
 so:Auftrag a rdfs:Class;
 	rdfs:label "Auftrag";
@@ -170,6 +235,11 @@ so:Leiter a rdfs:Class;
 	rdfs:label "Leiter", "Führer";
 	rdfs:comment "Die Klasse definiert den Führer des Einsatzabschnittes" .
 
+so:einteilungDesEinsatzes a rdf:Property;
+	rdfs:label "Einteilung des Einsatzes";
+	rdfs:comment "Zuordnung der Einsatzabschnitte zum Einsatz";
+	rdfs:domain so:Einsatz;
+	rdfs:range so:Einsatzabschnitt.
 
 so:hatOberabschnitt a rdf:Property;
 	rdfs:label "hat Oberabschnitt";
@@ -216,32 +286,15 @@ so:hatEinsatzort a rdf:Property;
 	rdfs:domain so:Einsatzabschnitt;
 	rdfs:range so:Einsatzort .
 
-so:Institution rdfs:subClassOf so:Organisation .
-so:Hubrettungsfahrzeug rdfs:subClassOf so:Feuerwehrfahrzeug .
-so:Informationssystem rdfs:subClassOf so:Objekt .
-so:Löschfahrzeug rdfs:subClassOf so:Feuerwehrfahrzeug .
-so:Vorschrift rdfs:subClassOf so:Objekt .
-so:Einrichtung rdfs:subClassOf so:Organisation .
-so:Straße rdfs:subClassOf so:Einsatzort .
+
+
+so:Adresse rdfs:subClassOf so:Einsatzort .
 so:Einsatzort rdfs:subClassOf so:Objekt .
-so:Hilfsorganisation rdfs:subClassOf so:Organisation .
-so:Anhängerfahrzeug rdfs:subClassOf so:Feuerwehrfahrzeug .
-so:Abkürzung rdfs:subClassOf so:Objekt .
 so:Flugzeug rdfs:subClassOf so:Fahrzeug .
 so:Eisenbahn rdfs:subClassOf so:Fahrzeug .
 so:Rettungsdienstfahrzeug rdfs:subClassOf so:Fahrzeug .
-so:Maßeinheit rdfs:subClassOf so:Objekt .
 so:Schiff rdfs:subClassOf so:Fahrzeug .
-so:Organisation rdfs:subClassOf so:Objekt .
-so:Führungsstelle rdfs:subClassOf so:Organisation .
-so:Gerät rdfs:subClassOf so:Objekt .
 so:Feuerwehrfahrzeug rdfs:subClassOf so:Fahrzeug .
-so:Gruppe rdfs:subClassOf so:Person .
-so:Kommunikator rdfs:subClassOf so:Person .
-so:Leiter rdfs:subClassOf so:Einsatzkraft .
-so:Stelle rdfs:subClassOf so:Organisation .
-so:RüstGerätewagen rdfs:subClassOf so:Feuerwehrfahrzeug .
 so:Einsatzkraft rdfs:subClassOf so:Person .
 so:Einsatzkraft rdfs:subClassOf so:Fahrzeug .
-so:Musikkapelle rdfs:subClassOf so:Gruppe .
 so:Fahrzeug rdfs:subClassOf so:Objekt .
