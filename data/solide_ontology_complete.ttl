@@ -273,11 +273,15 @@ so:hatLeiter a rdf:Property;
 
 so:hatEinsatzort a rdf:Property;
 	rdf:label "hat Einsatzort";
-	rdf:comment "Jeder Einsatzabschnitt ist an einem Ort";
-	rdfs:domain so:Einsatzabschnitt;
+	rdf:comment "Jede Einsatzkraft und jeder Einsatzabschnitt ist an einem Einsatzort";
+	rdfs:domain so:Einsatzkraft, so:Einsatzabschnitt;
 	rdfs:range so:Einsatzort .
 
-
+so:hatEinsatzabschnitt a rdf:Property;
+	rdf:label "hat Einsatzabschnitt";
+	rdf:comment "Jede Einsatzkraft ist einem Einsatzabschnitt zugeordnet";
+	rdfs:domain so:Einsatzkraft;
+	rdfs:range so:Einsatzabschnitt .
 
 so:Adresse rdfs:subClassOf so:Einsatzort .
 so:Einsatzort rdfs:subClassOf so:Objekt .
