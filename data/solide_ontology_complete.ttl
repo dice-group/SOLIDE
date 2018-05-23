@@ -57,12 +57,6 @@ so:funkbos a owl:DatatypeProperty;
     rdfs:domain so:Einsatzkraft;
     rdfs:range xsd:string .
 
-so:einsatzabschnitt a rdf:Property;
-    rdfs:label "Einsatzabschnitt einer Einheit";
-    rdfs:comment "Ort an dem sich eine Einheit befindet";
-    rdfs:domain so:Einsatzkraft;
-    rdfs:range  so:Einsatzort .
-
 so:einsatzbefehl a owl:DatatypeProperty;
     rdfs:label "Befehl für die Einheit";
     rdfs:comment "Ein Befehl beschreibt die Aufgabe, die eine Einheit zu diesem Zeitpunkt zu erfüllen hat, z.B. EA2 Gemeinde Aerzen";
