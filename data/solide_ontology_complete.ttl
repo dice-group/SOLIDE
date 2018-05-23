@@ -27,6 +27,7 @@ so:Einsatzort a rdfs:Class;
 so:hatStatus rdf:type owl:DatatypeProperty;
 	owl:oneOf ("1" "2" "3" "4" "5");
 	rdfs:range so:Einsatzstatus;
+	rdfs:domain xsd:int;
 	rdfs:comment "Dies ist eine Collection. Ein Status darf nur 1, 2,3,4 oder 5 sein".
 
 so:statusAenderung a rdf:Property;
