@@ -25,8 +25,14 @@ so:Einsatzort a rdfs:Class;
     rdfs:comment "Diese Klasse ist die Oberklasse aller Einsatzorte als URI damit es eindeutig ist, zb: http://dbpedia.org/resource/University_of_Paderborn". 
 
 so:StatusInt rdf:type owl:Datatype;
-	owl:oneOf ("1" "2" "3" "4" "5");
+	owl:oneOf (so:Status1 so:Status2 so:Status3 so:Status4 so:Status5);
 	rdfs:comment "Dies ist eine Collection. Ein Status darf nur 1, 2,3,4 oder 5 sein".
+so:Status1 rdfs:label "bereit", "1".
+so:Status2 rdfs:label "angefordert","alarmiert", "2".
+so:Status3 rdfs:label "auf Anfahrt", "3".
+so:Status4 rdfs:label "im Einsatz", "4".
+so:Status5 rdfs:label "in Ruhe", "5".
+
 
 so:hatStatus rdf:type owl:DatatypeProperty;
 	rdfs:domain so:Einsatzstatus;
