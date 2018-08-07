@@ -47,7 +47,7 @@ so:statusAenderung a rdf:Property;
 
 so:datumzeit rdf:type owl:DatatypeProperty;
     rdfs:label "Datum/Uhrzeit";
-    rdfs:comment "Dieses Datum wird gesetzt, wenn eine Einheit seinen Einsatzstatus verändert";
+    rdfs:comment "Dieses Datum wird gesetzt, wenn eine Einheit seinen Einsatzstatus verändert.";
     rdfs:domain so:Einsatzstatus;
     rdfs:range xsd:dateTime .
 
