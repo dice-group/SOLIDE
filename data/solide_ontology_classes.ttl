@@ -1,0 +1,60 @@
+
+so:Einsatzkraft a rdfs:Class;
+    rdfs:label "Einsatzkraft";
+    rdfs:comment "Diese Klasse ist die Oberklasse aller Einsatzkräfte, egal ob Person oder Fahrzeug". 
+
+so:EinsatzStatus a rdfs:Class;
+	rdfs:label "Einsatzstatus";
+    rdfs:comment "Diese Klasse ist die Oberklasse aller Einsatzstatusmeldungen. Immer wenn eine Einheit 'verschoben' wird, erzeugt sie einen neuen Einsatzstatus.". 
+
+so:Einsatzort a rdfs:Class;
+    rdfs:label "Einsatzort";
+    rdfs:comment "Diese Klasse ist die Oberklasse aller Einsatzorte als URI damit es eindeutig ist, zb: http://dbpedia.org/resource/University_of_Paderborn". 
+
+
+so:Nachricht a rdfs:Class;
+	rdfs:label "Nachricht";
+	rdfs:comment "Diese Klasse ist die Oberklasse aller Nachrichten" . 
+
+so:Kommunikator a rdfs:Class;
+	rdfs:label "Kommunikator";
+	rdfs:comment "Diese Klasse ist die Oberklasse aller Benutzer die Meldungen senden und empfangen." .
+
+so:Sender rdfs:subClassOf so:Kommunikator;
+	rdfs:label "Sender";
+	rdfs:comment "Diese Klasse ist für die Sender der Nachricht" .
+
+so:Empfaenger rdfs:subClassOf so:Kommunikator;
+	rdfs:label "Empfänger";
+	rdfs:comment "Diese Klasse ist für die Empfänger der Nachricht" .
+
+
+so:Einsatzabschnitt a rdfs:Class;
+	rdfs:label "Einsatzabschnitt";
+	rdfs:comment "Diese Klasse definiert einen Einsatzabschnitt  -existiert schon als Property". 
+
+so:Einsatzort a rdfs:Class;
+	rdfs:label "Einsatzort";
+	rdfs:comment "Die Klasse definiert den Ort des Einsatzabschnittes - die Klasse existiert schon " .	
+
+so:Auftrag a rdfs:Class;
+	rdfs:label "Auftrag";
+	rdfs:comment "Die Klasse definiert den Auftrag des Einsatzabschnittes" .
+
+so:Leiter a rdfs:Class;
+	rdfs:label "Leiter", "Führer";
+	rdfs:comment "Die Klasse definiert den Führer des Einsatzabschnittes" .
+
+
+
+so:Straße rdfs:subClassOf so:Einsatzort .
+so:Einsatzort rdfs:subClassOf so:Objekt .
+so:Flugzeug rdfs:subClassOf so:Fahrzeug .
+so:Eisenbahn rdfs:subClassOf so:Fahrzeug .
+so:Rettungsdienstfahrzeug rdfs:subClassOf so:Fahrzeug .
+so:Schiff rdfs:subClassOf so:Fahrzeug .
+so:Feuerwehrfahrzeug rdfs:subClassOf so:Fahrzeug .
+so:Einsatzkraft rdfs:subClassOf so:Person .
+so:Einsatzkraft rdfs:subClassOf so:Fahrzeug .
+so:Fahrzeug rdfs:subClassOf so:Objekt .
+
