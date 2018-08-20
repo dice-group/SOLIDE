@@ -4,6 +4,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
+
 so:Stammdaten a rdfs:Class;
 	rdfs:label "Stammdaten";
 	rdfs:comment "Diese Klasse repräsentiert die Stammdaten. Ihr sind alle Einsätze zugeordnet".
@@ -231,8 +232,14 @@ so:funkbos a owl:DatatypeProperty;
 	rdfs:domain so:Leiter;
 	rdfs:range xsd:string .
 
-so:funkkanal a owl:DatatypeProperty;
-	rdfs:label "Funkkanal";
+so:TMO_4M a owl:DatatypeProperty;
+	rdfs:label "Funkkanal TMO 4 Meter";
+	rdfs:comment "Funkkanal oder Rufgruppe des Abschnittsleiters";
+	rdfs:domain so:Leiter;
+	rdfs:range xsd:string .
+
+so:DMO_2M a owl:DatatypeProperty;
+	rdfs:label "Funkkanal DMO 2 Meter";
 	rdfs:comment "Funkkanal oder Rufgruppe des Abschnittsleiters";
 	rdfs:domain so:Leiter;
 	rdfs:range xsd:string .
