@@ -274,6 +274,17 @@ so:hatEinsatzabschnitt a rdf:Property;
 	rdfs:domain so:Einsatzkraft;
 	rdfs:range so:Einsatzabschnitt .
 
+so:beschreibung_FH a rdf:Property;
+	rdf:label "Freitextfeld";
+	rdf:comment "Freitextfeld der Führungsharke";
+	rdfs:domain so:Einsatzabschnitt;
+	rdfs:range xsd:string .
+so:kommentar_FH a rdf:Property;
+	rdf:label "Kommentarfeld";
+	rdf:comment "Kommentarfeld der Führungsharke";
+	rdfs:domain so:Einsatzabschnitt;
+	rdfs:range xsd:string .
+
 so:Adresse rdfs:subClassOf so:Einsatzort .
 so:Einsatzort rdfs:subClassOf so:Objekt .
 so:Flugzeug rdfs:subClassOf so:Fahrzeug .
