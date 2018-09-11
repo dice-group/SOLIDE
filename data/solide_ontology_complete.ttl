@@ -116,15 +116,27 @@ so:AdresseDerInstitution a rdf:Property;
 	rdfs:domain so:Stammdaten;
 	rdfs:range so:Adresse.
 
-so:datumzeit rdf:type owl:DatatypeProperty;
+so:datumvon rdf:type owl:DatatypeProperty;
     rdfs:label "Datum des Einsatzes";
     rdfs:comment "Datum und Uhrzeit an dem der Einsatz angelegt wurde";
+    rdfs:domain so:Einsatz;
+    rdfs:range xsd:dateTime .
+
+so:datumbis rdf:type owl:DatatypeProperty;
+    rdfs:label "Datum des Einsatzendes";
+    rdfs:comment "Datum und Uhrzeit an dem der Einsatz beendet wurde";
     rdfs:domain so:Einsatz;
     rdfs:range xsd:dateTime .
 
 so:NameDesEinsatzes a rdf:Property;
 	rdfs:label "Name des Einsatzes";
 	rdfs:comment "Der Name unter dem der Einsatz geführt wird";
+	rdfs:domain so:Einsatz;
+	rdfs:range xsd:string.
+
+so:hatAlarmstichwort a rdf:Property;
+	rdfs:label "Alarmstichwort";
+	rdfs:comment "Stichwort, das dem Einsatz zugeordnet wird";
 	rdfs:domain so:Einsatz;
 	rdfs:range xsd:string.
 
