@@ -1,0 +1,24 @@
+Wer ist #rel1# im #rel2# #ent1#?
+SELECT ?y WHERE { ?x rdfs:label #ent1#. ?x rdf:type #rel2#. ?x #rel1# ?y}
+Gib mir die letzte #ent1#.
+SELECT ?u_0 WHERE { ?ID so:betreff #ent1# . ?ID so:zeitGesendet ?timestamp. ?ID so:meldung ?u_0. } ORDER BY DESC (?timestamp) LIMIT 1
+Wo ist #ent1#?
+SELECT ?u_0 WHERE { ?ID so:einsatzabschnitt #ent1# . ?ID so:hatEinsatzort ?u_0.}
+###
+Wer ist #rel1# im #rel2# #ent1#?
+SELECT ?u_0 WHERE { ?ID #rel2# #ent1# . ?ID #rel1# ?u_0 . }
+Gib mir die letzte #ent1#.
+SELECT ?u_0 WHERE { ?ID so:betreff #ent1# . ?ID so:zeitGesendet ?timestamp. ?ID so:meldung ?u_0. } ORDER BY DESC (?timestamp) LIMIT 1
+Wo ist #ent1#?
+SELECT ?u_0 WHERE { ?ID so:einsatzabschnitt #ent1# . ?ID so:hatEinsatzort ?u_0.}
+###
+Wer ist Ansprechpartner im Einsatzabschnitt "EA2"?
+SELECT ?u_0 WHERE { ?ID so:einsatzabschnitt "EA2" . ?ID so:hatLeiter ?u_0 . }
+Wie lautete der ETB Eintrag vom 20. Februar gegen 11.00 Uhr?
+SELECT ?u_0 WHERE { ?ID so:betreff "Einsatztagebuch" . ?ID so:zeitGesendet ?date. ?ID so:meldung ?u_0. FILTER (xsd:dateTime(?date) >"2018-02-20T10:50:00+01:00"^^xsd:dateTime && xsd:dateTime(?date) <"2018-02-20T11:10:00+01:00"^^xsd:dateTime) }
+Gib mir die letzte Lagemeldung.
+SELECT ?u_0 WHERE { ?ID so:betreff "Lagemeldung" . ?ID so:zeitGesendet ?timestamp. ?ID so:meldung ?u_0. } ORDER BY DESC (?timestamp) LIMIT 1
+Wo ist UEA2?
+SELECT ?u_0 WHERE { ?ID so:einsatzabschnitt "UEA2" . ?ID so:hatEinsatzort ?u_0.}
+Wie viele PA-Träger sind im Einsatz?
+SELECT (sum(xsd:integer(?anzahl)) AS ?Anzahl) WHERE { ?ID so:statusAenderung "3" . ?ID so:patraeger ?anzahl . }
