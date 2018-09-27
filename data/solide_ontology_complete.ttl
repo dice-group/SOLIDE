@@ -3,6 +3,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sch: <http://schema.org/> .
 
 
 so:Stammdaten a rdfs:Class;
@@ -137,6 +138,35 @@ so:NameDesEinsatzes a rdf:Property;
 so:hatAlarmstichwort a rdf:Property;
 	rdfs:label "Alarmstichwort";
 	rdfs:comment "Stichwort, das dem Einsatz zugeordnet wird";
+	rdfs:domain so:Einsatz;
+	rdfs:range xsd:string.
+
+so:longitude a rdf:Property;
+	rdfs:label "Längengrad";
+	rdfs:comment "Längengrad, der dem Einsatz zugeordnet werden kann";
+	rdfs:domain so:Einsatz;
+	rdfs:range xsd:string.
+so:latitude a rdf:Property;
+	rdfs:label "Breitengrad";
+	rdfs:comment "Breitengrad, der dem Einsatz zugeordnet werden kann";
+	rdfs:domain so:Einsatz;
+	rdfs:range xsd:string.
+
+sch:streetAddress a rdf:Property;
+	rdfs:label "Straße";
+	rdfs:comment "Adresse des Einsatzes";
+	rdfs:domain so:Einsatz;
+	rdfs:range xsd:string.
+
+sch:postalCode a rdf:Property;
+	rdfs:label "Postleitzahl";
+	rdfs:comment "Postleitzahl des Einsatzes";
+	rdfs:domain so:Einsatz;
+	rdfs:range xsd:string.
+
+sch:addressLocality a rdf:Property;
+	rdfs:label "Ort";
+	rdfs:comment "Ortsangabe postalisch des Einsatzes";
 	rdfs:domain so:Einsatz;
 	rdfs:range xsd:string.
 
