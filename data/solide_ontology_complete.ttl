@@ -327,6 +327,23 @@ so:kommentar_FH a rdf:Property;
 	rdfs:domain so:Einsatzabschnitt;
 	rdfs:range xsd:string .
 
+so:Stabsfunktion a rdfs:Class;
+    rdfs:label "Stabsfunktion";
+    rdfs:comment "Klasse aller Stabsfunktionen".
+
+so:hatBenutzer a rdf:Property;
+    rdfs:label "Benutzer des Systems";
+    rdfs:comment "Bezeichnung der Stabsfunktion";
+    rdfs:domain so:Stammdaten;
+    rdfs:range so:Stabsfunktion.
+
+so:istAngemeldet a rdf:Property;
+    rdfs:label "angemeldete Benutzer";
+    rdfs:comment "Benutzer die aktuell am System angemeldet sind";
+    rdfs:domain so:Einsatz;
+    rdfs:range so:Stabsfunktion.
+
+
 so:Adresse rdfs:subClassOf so:Einsatzort .
 so:Einsatzort rdfs:subClassOf so:Objekt .
 so:Flugzeug rdfs:subClassOf so:Fahrzeug .
