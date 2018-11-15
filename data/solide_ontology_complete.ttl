@@ -343,6 +343,27 @@ so:istAngemeldet a rdf:Property;
     rdfs:domain so:Einsatz;
     rdfs:range so:Stabsfunktion.
 
+so:Schadenkonto a rdfs:Class;
+    rdfs:label "Klassen der Schadenkonten";
+    rdfs:comment "alle Schadenkonten gehören zu dieser Klasse".
+
+so:hatSchadenkonto a rdf:Property;
+    rdfs:label "Schadenkonto";
+    rdfs:comment "Schadenkonto eins Einsatzabschnitts";
+    rdfs:domain so:Einsatz;
+    rdfs:range so:Schadenkonto.
+
+so:SchadenkontoBechreibung a rdf:Property;
+    rdfs:label "Beschreibung";
+    rdfs:comment "Beschreibung des Schadens"
+    rdfs:domain so:Schadenkonto;
+    rdfs:range xsd:string.
+
+so:SchadenkontoGefahr a rdf:Property;
+    rdfs:label "Gefahr";
+    rdfs:comment "Gefahren des Schadens"
+    rdfs:domain so:Schadenkonto;
+    rdfs:range xsd:string.
 
 so:Adresse rdfs:subClassOf so:Einsatzort .
 so:Einsatzort rdfs:subClassOf so:Objekt .
