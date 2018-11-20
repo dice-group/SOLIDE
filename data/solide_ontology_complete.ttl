@@ -355,15 +355,22 @@ so:hatSchadenkonto a rdf:Property;
 
 so:SchadenkontoBechreibung a rdf:Property;
     rdfs:label "Beschreibung";
-    rdfs:comment "Beschreibung des Schadens"
+    rdfs:comment "Beschreibung des Schadens";
     rdfs:domain so:Schadenkonto;
     rdfs:range xsd:string.
 
 so:SchadenkontoGefahr a rdf:Property;
     rdfs:label "Gefahr";
-    rdfs:comment "Gefahren des Schadens"
+    rdfs:comment "Gefahren des Schadens";
     rdfs:domain so:Schadenkonto;
     rdfs:range xsd:string.
+
+so:SchadenGefahrLabel a rdf:Property;
+    rdfs:label "Original-Gefahrenstring";
+    rdfs:comment "Der originale Gefahrenstring aus der SQL-Datenbank für Update-Vergleich";
+    rdfs:domain so:Schadenkonto;
+    rdfs:range xsd:string.
+
 
 so:Adresse rdfs:subClassOf so:Einsatzort .
 so:Einsatzort rdfs:subClassOf so:Objekt .
