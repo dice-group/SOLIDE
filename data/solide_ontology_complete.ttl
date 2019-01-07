@@ -327,19 +327,33 @@ so:kommentar_FH a rdf:Property;
 	rdfs:domain so:Einsatzabschnitt;
 	rdfs:range xsd:string .
 
+so:Mandant a rdfs:Class;
+	rdfs:label "Mandant";
+	rdfs:comment "Klasse der Mandanten eines Systems".
+
 so:Stabsfunktion a rdfs:Class;
-    rdfs:label "Stabsfunktion";
-    rdfs:comment "Klasse aller Stabsfunktionen".
+	rdfs:label "Stabsfunktion";
+	rdfs:comment "Klasse der Stabsfunktionen".
+
+so:Benutzer a rdfs:Class;
+	rdfs:label "Benutzer";
+	rdfs:comment "Klasse der Systembenutzer".
+
+so:hatStabsfunktion a rdf:Property;
+    rdfs:label "Stabsfunktionen des Systems";
+    rdfs:comment "Bezeichnung der Stabsfunktion";
+    rdfs:domain so:Einsatz;
+    rdfs:range so:Stabsfunktion.
 
 so:hatBenutzer a rdf:Property;
     rdfs:label "Benutzer des Systems";
-    rdfs:comment "Bezeichnung der Stabsfunktion";
-    rdfs:domain so:Stammdaten;
-    rdfs:range so:Stabsfunktion.
+    rdfs:comment "Bezeichnung des Benutzers";
+    rdfs:domain so:Einsatz;
+    rdfs:range so:Benutzer.
 
 so:istAngemeldet a rdf:Property;
-    rdfs:label "angemeldete Benutzer";
-    rdfs:comment "Benutzer die aktuell am System angemeldet sind";
+    rdfs:label "angemeldete Stabsfunktion";
+    rdfs:comment "Stabsfunktion die aktuell am System angemeldet sind";
     rdfs:domain so:Einsatz;
     rdfs:range so:Stabsfunktion.
 
