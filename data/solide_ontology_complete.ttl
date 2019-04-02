@@ -135,6 +135,12 @@ so:NameDesEinsatzes a rdf:Property;
 	rdfs:domain so:Einsatz;
 	rdfs:range xsd:string.
 
+so:einsatztyp a rdf:Property;
+	rdfs:label "Typ des Einsatzes";
+	rdfs:comment "Der Typ zu dem der Einsatz gehört. z.B. Autounfall";
+	rdfs:domain so:Einsatz;
+	rdfs:range xsd:string.
+
 so:hatAlarmstichwort a rdf:Property;
 	rdfs:label "Alarmstichwort";
 	rdfs:comment "Stichwort, das dem Einsatz zugeordnet wird";
