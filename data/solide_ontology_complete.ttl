@@ -79,8 +79,6 @@ so:patraeger  a owl:DatatypeProperty;
     rdfs:domain so:Einsatzkraft;
     rdfs:range xsd:integer .
 
-
-
 so:einsatzmittel a owl:DatatypeProperty;
     rdfs:label "Einsatzmittel der Einheit";
     rdfs:comment "Einsatzmittel welche diese Einheit mitführt z.B. Türöffner";
@@ -152,6 +150,7 @@ so:longitude a rdf:Property;
 	rdfs:comment "Längengrad, der dem Einsatz zugeordnet werden kann";
 	rdfs:domain so:Einsatz;
 	rdfs:range xsd:string.
+
 so:latitude a rdf:Property;
 	rdfs:label "Breitengrad";
 	rdfs:comment "Breitengrad, der dem Einsatz zugeordnet werden kann";
@@ -322,11 +321,24 @@ so:hatEinsatzabschnitt a rdf:Property;
 	rdfs:domain so:Einsatzkraft;
 	rdfs:range so:Einsatzabschnitt .
 
-so:beschreibung_FH a rdf:Property;
-	rdf:label "Freitextfeld";
-	rdf:comment "Freitextfeld der Führungsharke";
+so:beschreibung_FH1 a rdf:Property;
+	rdf:label "Freitextfeld 1";
+	rdf:comment "Freitextfeld 1 der Führungsharke";
 	rdfs:domain so:Einsatzabschnitt;
 	rdfs:range xsd:string .
+
+so:beschreibung_FH2 a rdf:Property;
+	rdf:label "Freitextfeld 2";
+	rdf:comment "Freitextfeld 2 der Führungsharke";
+	rdfs:domain so:Einsatzabschnitt;
+	rdfs:range xsd:string .
+
+so:beschreibung_FH3 a rdf:Property;
+	rdf:label "Freitextfeld 3";
+	rdf:comment "Freitextfeld 3 der Führungsharke";
+	rdfs:domain so:Einsatzabschnitt;
+	rdfs:range xsd:string .
+
 so:kommentar_FH a rdf:Property;
 	rdf:label "Kommentarfeld";
 	rdf:comment "Kommentarfeld der Führungsharke";
