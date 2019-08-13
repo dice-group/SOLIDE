@@ -224,8 +224,8 @@ so:pressetauglich a owl:DatatypeProperty;
 so:nachrichtVersenden a rdf:Property;
 	rdfs:label "Nachricht senden";
 	rdfs:comment "Senden einer Nachricht";
-	rdfs:domain so:Sender;
-	rdfs:range so:Nachricht .
+	rdfs:domain so:Nachricht;
+	rdfs:range so:Sender .
 
 so:nachrichtEmpfangen a rdf:Property;
 	rdfs:label "Nachricht empfangen";
