@@ -104,7 +104,7 @@ so:hatEinsatzkräfte a rdf:Property;
 	rdfs:domain so:Einsatz;
 	rdfs:range so:Einsatzkraft.
 
-so:NameDerInstitution a rdf:Property;
+so:NameDerInstitution a owl:DatatypeProperty;
 	rdfs:label "Name der Institution";
 	rdfs:comment "Der Name der Institution, die die Software einsätzt";
 	rdfs:domain so:Stammdaten;
@@ -128,49 +128,49 @@ so:datumbis rdf:type owl:DatatypeProperty;
     rdfs:domain so:Einsatz;
     rdfs:range xsd:dateTime .
 
-so:NameDesEinsatzes a rdf:Property;
+so:NameDesEinsatzes a owl:DatatypeProperty;
 	rdfs:label "Einsatzname";
 	rdfs:comment "Der Name unter dem der Einsatz geführt wird";
 	rdfs:domain so:Einsatz;
 	rdfs:range xsd:string.
 
-so:einsatztyp a rdf:Property;
+so:einsatztyp a owl:DatatypeProperty;
 	rdfs:label "Einsatztyp";
 	rdfs:comment "Der Typ zu dem der Einsatz gehört. z.B. Autounfall";
 	rdfs:domain so:Einsatz;
 	rdfs:range xsd:string.
 
-so:hatAlarmstichwort a rdf:Property;
+so:hatAlarmstichwort a owl:DatatypeProperty;
 	rdfs:label "Alarmstichwort";
 	rdfs:comment "Stichwort, das dem Einsatz zugeordnet wird";
 	rdfs:domain so:Einsatz;
 	rdfs:range xsd:string.
 
-so:longitude a rdf:Property;
+so:longitude a owl:DatatypeProperty;
 	rdfs:label "Längengrad";
 	rdfs:comment "Längengrad, der dem Einsatz zugeordnet werden kann";
 	rdfs:domain so:Einsatz;
 	rdfs:range xsd:string.
 
-so:latitude a rdf:Property;
+so:latitude a owl:DatatypeProperty;
 	rdfs:label "Breitengrad";
 	rdfs:comment "Breitengrad, der dem Einsatz zugeordnet werden kann";
 	rdfs:domain so:Einsatz;
 	rdfs:range xsd:string.
 
-sch:streetAddress a rdf:Property;
+sch:streetAddress a owl:DatatypeProperty;
 	rdfs:label "Straße","Strasse";
 	rdfs:comment "Adresse des Einsatzes";
 	rdfs:domain so:Einsatz;
 	rdfs:range xsd:string.
 
-sch:postalCode a rdf:Property;
+sch:postalCode a owl:DatatypeProperty;
 	rdfs:label "Postleitzahl","PLZ";
 	rdfs:comment "Postleitzahl des Einsatzes";
 	rdfs:domain so:Einsatz;
 	rdfs:range xsd:string.
 
-sch:addressLocality a rdf:Property;
+sch:addressLocality a owl:DatatypeProperty;
 	rdfs:label "Ort","Stadt";
 	rdfs:comment "Ortsangabe postalisch des Einsatzes";
 	rdfs:domain so:Einsatz;
@@ -198,7 +198,7 @@ so:betreff a owl:DatatypeProperty;
 	rdfs:domain so:Nachricht;
 	rdfs:range xsd:string .
 
-so:meldung a rdf:Property;
+so:meldung a owl:DatatypeProperty;
 	rdfs:label "Meldung", "Email", "Meldungstext";
 	rdfs:comment "Die eigentliche Meldung oder Nachricht";
 	rdfs:domain so:Nachricht;
@@ -322,25 +322,25 @@ so:hatEinsatzabschnitt a rdf:Property;
 	rdfs:domain so:Einsatzkraft;
 	rdfs:range so:Einsatzabschnitt .
 
-so:beschreibung_FH1 a rdf:Property;
+so:beschreibung_FH1 a owl:DatatypeProperty;
 	rdf:label "Freitextfeld 1";
 	rdf:comment "Freitextfeld 1 der Führungsharke";
 	rdfs:domain so:Einsatzabschnitt;
 	rdfs:range xsd:string .
 
-so:beschreibung_FH2 a rdf:Property;
+so:beschreibung_FH2 a owl:DatatypeProperty;
 	rdf:label "Freitextfeld 2";
 	rdf:comment "Freitextfeld 2 der Führungsharke";
 	rdfs:domain so:Einsatzabschnitt;
 	rdfs:range xsd:string .
 
-so:beschreibung_FH3 a rdf:Property;
+so:beschreibung_FH3 a owl:DatatypeProperty;
 	rdf:label "Freitextfeld 3";
 	rdf:comment "Freitextfeld 3 der Führungsharke";
 	rdfs:domain so:Einsatzabschnitt;
 	rdfs:range xsd:string .
 
-so:kommentar_FH a rdf:Property;
+so:kommentar_FH a owl:DatatypeProperty;
 	rdf:label "Kommentarfeld";
 	rdf:comment "Kommentarfeld der Führungsharke";
 	rdfs:domain so:Einsatzabschnitt;
@@ -386,19 +386,19 @@ so:hatSchadenkonto a rdf:Property;
     rdfs:domain so:Einsatz;
     rdfs:range so:Schadenkonto.
 
-so:SchadenkontoBechreibung a rdf:Property;
+so:SchadenkontoBechreibung a owl:DatatypeProperty;
     rdfs:label "Schadenkontobeschreibung";
     rdfs:comment "Beschreibung des Schadens";
     rdfs:domain so:Schadenkonto;
     rdfs:range xsd:string.
 
-so:SchadenkontoGefahr a rdf:Property;
+so:SchadenkontoGefahr a owl:DatatypeProperty;
     rdfs:label "Gefahr";
     rdfs:comment "Gefahren des Schadens";
     rdfs:domain so:Schadenkonto;
     rdfs:range xsd:string.
 
-so:SchadenGefahrLabel a rdf:Property;
+so:SchadenGefahrLabel a owl:DatatypeProperty;
     rdfs:label "Gefahr-Label";
     rdfs:comment "Der originale Gefahrenstring aus der SQL-Datenbank für Update-Vergleich";
     rdfs:domain so:Schadenkonto;
