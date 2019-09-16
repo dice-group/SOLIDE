@@ -274,6 +274,12 @@ so:hatOberabschnitt a rdf:Property;
 so:hatUnterabschnitt a rdf:Property;
 	owl:inverseOf: so:hatOberabschnitt .
 
+so:EinsatzabschnittID a rdf:Property;
+	rdfs:label "EinsatzabschnittID";
+	rdfs:comment "Die ID des Einsatzabschnittes";
+	rdfs:domain so:Einsatzabschnitt ;
+	rdfs:range xsd:string .
+
 so:funkbos a owl:DatatypeProperty;
 	rdfs:label "Funkrufname";
 	rdfs:comment "Nicht-normalisierter Funkname, z.B. Florian Hameln 89-12-1 oder Florian Hameln 89/12/1 oder Florian Hameln 89/12";
