@@ -24,8 +24,6 @@ so:Einsatzort a rdfs:Class;
     rdfs:comment "Diese Klasse ist die Oberklasse aller Einsatzorte als URI damit es eindeutig ist, zb: http://dbpedia.org/resource/University_of_Paderborn". 
 
 
-
-
 so:hatStatus rdf:type owl:DatatypeProperty;
 	rdfs:label "Status";
 	rdfs:domain so:Einsatzkraft;
@@ -129,7 +127,7 @@ so:datumbis rdf:type owl:DatatypeProperty;
     rdfs:range xsd:dateTime .
 
 so:NameDesEinsatzes a owl:DatatypeProperty;
-	rdfs:label "Einsatzname";
+	rdfs:label "Einsatzname", "Name des Einsatzes";
 	rdfs:comment "Der Name unter dem der Einsatz geführt wird";
 	rdfs:domain so:Einsatz;
 	rdfs:range xsd:string.
@@ -147,13 +145,13 @@ so:hatAlarmstichwort a owl:DatatypeProperty;
 	rdfs:range xsd:string.
 
 so:longitude a owl:DatatypeProperty;
-	rdfs:label "Längengrad";
+	rdfs:label "Längengrad", "longitude";
 	rdfs:comment "Längengrad, der dem Einsatz zugeordnet werden kann";
 	rdfs:domain so:Einsatz;
 	rdfs:range xsd:string.
 
 so:latitude a owl:DatatypeProperty;
-	rdfs:label "Breitengrad";
+	rdfs:label "Breitengrad", "latitude";
 	rdfs:comment "Breitengrad, der dem Einsatz zugeordnet werden kann";
 	rdfs:domain so:Einsatz;
 	rdfs:range xsd:string.
@@ -223,7 +221,7 @@ so:pressetauglich a owl:DatatypeProperty;
 	rdfs:range xsd:boolean .
 
 so:nachrichtVersenden a rdf:Property;
-	rdfs:label "Nachricht senden";
+	rdfs:label "Nachricht versenden";
 	rdfs:comment "Senden einer Nachricht";
 	rdfs:domain so:Nachricht;
 	rdfs:range so:Sender .
@@ -241,7 +239,7 @@ so:zeitGesendet a owl:DatatypeProperty;
     rdfs:range xsd:dateTime .
 
 so:einsatzNachricht a rdf:Property;
-	rdfs:label "Nachrichten des Einsatzes";
+	rdfs:label "Nachrichten des Einsatzes", "Einsatznachricht";
 	rdfs:comment "Zu jedem Einsatz gehören Meldungen/Nachrichten";
 	rdfs:domain so:Einsatz;
 	rdfs:range so:Nachricht.
