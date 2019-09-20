@@ -178,6 +178,11 @@ so:Nachricht a rdfs:Class;
 	rdfs:label "Nachricht";
 	rdfs:comment "Diese Klasse ist die Oberklasse aller Nachrichten" . 
 
+so:ETB a rdfs:Class;
+	rdfs:label "ETB", "ETB-Eintrag", "Einsatztagebucheintrag";
+	rdfs:comment "Diese Klasse beschreibt die Einsatztagebucheinträge" ;
+	rdfs:subClassof so:Nachricht.
+
 so:Kommunikator a rdfs:Class;
 	rdfs:label "Kommunikator";
 	rdfs:comment "Diese Klasse ist die Oberklasse aller Benutzer die Meldungen senden und empfangen." .
