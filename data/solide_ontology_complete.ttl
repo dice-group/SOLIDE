@@ -307,6 +307,12 @@ so:telefon a owl:DatatypeProperty;
 	rdfs:domain so:Leiter;
 	rdfs:range xsd:string .
 
+so:mobiltelefon a owl:DatatypeProperty;
+	rdf:label "Mobilfunknummer";
+	rdf:comment "Mobilfunknummer des Abschnittleiters";
+	rdfs:domain so:Leiter;
+	rdfs:range xsd:string .
+
 so:hatAuftrag a rdf:Property;
 	rdf:label "Auftrag";
 	rdf:comment "Jedem Einsatzabschnitt wird ein Auftrag zugewiesen";
