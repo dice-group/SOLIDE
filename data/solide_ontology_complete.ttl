@@ -18,6 +18,11 @@ so:Einsatzkraft a rdfs:Class;
     rdfs:label "Einsatzkraft";
     rdfs:comment "Diese Klasse ist die Oberklasse aller Einsatzkräfte, egal ob Person oder Fahrzeug". 
 
+so:nichtdisponierteEinsatzkraft rdfs:subClassOf so:Einsatzkraft;
+	rdfs:label "nicht disponierte Einsatzkraft";
+	rdfs:comment "Diese Klasse beschreibt nicht im TecBos dipsonierte Einsatzkräfte.".
+
+
 
 so:Einsatzort a rdfs:Class;
     rdfs:label "Einsatzort";
