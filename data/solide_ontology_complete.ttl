@@ -424,6 +424,16 @@ so:SchadenGefahrLabel a owl:DatatypeProperty;
     rdfs:domain so:Schadenkonto;
     rdfs:range xsd:string.
 
+so:POI a rdfs:Class;
+	rdfs:label "POI","Point of Interest","Location", "Ort";
+	rdfs:comment "Die Klasse beschreibt wichtige, interessante Orte" .
+
+so:naheBei a owl:DatatypeProperty;
+	rdfs:label "nahe bei", "in der Nähe von";
+	rdfs:comment "Relation zur Nähe eines POI zu Ortsangabe o.ä.";
+	rdfs:domain so:POI;
+	rdfs:range xds:string.
+
 
 so:Adresse rdfs:subClassOf so:Einsatzort .
 so:Einsatzort rdfs:subClassOf so:Objekt .
