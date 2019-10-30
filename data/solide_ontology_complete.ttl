@@ -137,6 +137,12 @@ so:NameDesEinsatzes a owl:DatatypeProperty;
 	rdfs:domain so:Einsatz;
 	rdfs:range xsd:string.
 
+so:einsatzabschliessen a owl:DatatypeProperty;
+	rdfs:label "einsatzabschliessen";
+	rdfs:comment "Zeigt an, ob ein Einsatz aktiv oder abgeschlossen ist";
+	rdfs:domain so:Einsatz;
+	rdfs:range xsd:integer.
+
 so:einsatztyp a owl:DatatypeProperty;
 	rdfs:label "Einsatztyp";
 	rdfs:comment "Der Typ zu dem der Einsatz gehört. z.B. Autounfall";
@@ -153,13 +159,13 @@ so:longitude a owl:DatatypeProperty;
 	rdfs:label "Längengrad", "longitude";
 	rdfs:comment "Längengrad, der dem Einsatz zugeordnet werden kann";
 	rdfs:domain so:Einsatz;
-	rdfs:range xsd:string.
+	rdfs:range xsd:integer.
 
 so:latitude a owl:DatatypeProperty;
 	rdfs:label "Breitengrad", "latitude";
 	rdfs:comment "Breitengrad, der dem Einsatz zugeordnet werden kann";
 	rdfs:domain so:Einsatz;
-	rdfs:range xsd:string.
+	rdfs:range xsd:integer.
 
 sch:streetAddress a owl:DatatypeProperty;
 	rdfs:label "Straße","Strasse";
