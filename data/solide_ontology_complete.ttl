@@ -441,28 +441,28 @@ so:naheBei a owl:DatatypeProperty;
 	rdfs:range xsd:string.
 
 so:Bombenfund rdfs:subClassOf so:Einsatz;
-    rdfs:label "Bombenfund, Bombeneinsatz"
-    rdfs:comment "Spezifiziert den Einsatztyp"
+    rdfs:label "Bombenfund, Bombeneinsatz";
+    rdfs:comment "Spezifiziert den Einsatztyp".
 
 so:Autounfall rdfs:subClassOf so:Einsatz;
-    rdfs:label "Autounfall"
-    rdfs:comment "Spezifiziert den Einsatztyp"
+    rdfs:label "Autounfall";
+    rdfs:comment "Spezifiziert den Einsatztyp".
 
 so:Bahnunfall rdfs:subClassOf so:Einsatz;
-    rdfs:label "Bahnunfall"
-    rdfs:comment "Spezifiziert den Einsatztyp"
+    rdfs:label "Bahnunfall";
+    rdfs:comment "Spezifiziert den Einsatztyp".
 
 so:Brandeinsatz rdfs:subClassOf so:Einsatz;
-    rdfs:label "Brandeinsatz, Brand"
-    rdfs:comment "Spezifiziert den Einsatztyp"
+    rdfs:label "Brandeinsatz, Brand";
+    rdfs:comment "Spezifiziert den Einsatztyp".
 
 so:Hilfseinsatz_Wasser rdfs:subClassOf so:Einsatz;
-    rdfs:label "Hilfseinsatz Wasser, Hochwasser, Überschwemmung"
-    rdfs:comment "Spezifiziert den Einsatztyp"
+    rdfs:label "Hilfseinsatz Wasser, Hochwasser, Überschwemmung";
+    rdfs:comment "Spezifiziert den Einsatztyp".
 
 so:Übung rdfs:subClassOf so:Einsatz;
-    rdfs:label "Übung, Übungseinsatz"
-    rdfs:comment "Spezifiziert den Einsatztyp"
+    rdfs:label "Übung, Übungseinsatz";
+    rdfs:comment "Spezifiziert den Einsatztyp".
 
 so:Adresse rdfs:subClassOf so:Einsatzort .
 so:Einsatzort rdfs:subClassOf so:Objekt .
