@@ -438,7 +438,7 @@ so:naheBei a owl:DatatypeProperty;
 	rdfs:label "nahe bei", "in der Nähe von";
 	rdfs:comment "Relation zur Nähe eines POI zu Ortsangabe o.ä.";
 	rdfs:domain so:POI;
-	rdfs:range xds:string.
+	rdfs:range xsd:string.
 
 so:Bombenfund rdfs:subClassOf so:Einsatz;
     rdfs:label "Bombenfund, Bombeneinsatz"
