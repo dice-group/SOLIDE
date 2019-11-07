@@ -440,8 +440,18 @@ so:naheBei a owl:DatatypeProperty;
 	rdfs:domain so:POI;
 	rdfs:range xsd:string.
 
+so:hatAusrüstung a owl:DatatypeProperty;
+	rdfs:label "hat Ausrüstung";
+	rdfs:comment "Beschreibt welche Ausrüstung ein Fahrzeug etc hat".
+	rdfs:domain: so:Fahrzeug;
+	rdfs:range so:Ausrüstung .
+
+so:Ausrüstung a rdfs:Class;
+	rdfs:label "Ausrüstung";
+	rdfs:comment "Klasse der Ausrüstungsgegenstände" .
+
 so:Bombenfund rdfs:subClassOf so:Einsatz;
-    rdfs:label "Bombenfund, Bombeneinsatz";
+    rdfs:label "Bombenfund", "Bombeneinsatz";
     rdfs:comment "Spezifiziert den Einsatztyp".
 
 so:Autounfall rdfs:subClassOf so:Einsatz;
@@ -453,16 +463,17 @@ so:Bahnunfall rdfs:subClassOf so:Einsatz;
     rdfs:comment "Spezifiziert den Einsatztyp".
 
 so:Brandeinsatz rdfs:subClassOf so:Einsatz;
-    rdfs:label "Brandeinsatz, Brand";
+    rdfs:label "Brandeinsatz", "Brand";
     rdfs:comment "Spezifiziert den Einsatztyp".
 
 so:Hilfseinsatz_Wasser rdfs:subClassOf so:Einsatz;
-    rdfs:label "Hilfseinsatz Wasser, Hochwasser, Überschwemmung";
+    rdfs:label "Hilfseinsatz Wasser","Hochwasser","Überschwemmung";
     rdfs:comment "Spezifiziert den Einsatztyp".
 
 so:Übung rdfs:subClassOf so:Einsatz;
     rdfs:label "Übung, Übungseinsatz";
     rdfs:comment "Spezifiziert den Einsatztyp".
+
 
 so:Adresse rdfs:subClassOf so:Einsatzort .
 so:Einsatzort rdfs:subClassOf so:Objekt .
