@@ -442,7 +442,7 @@ so:naheBei a owl:DatatypeProperty;
 
 so:hatAusrüstung a owl:DatatypeProperty;
 	rdfs:label "hat Ausrüstung";
-	rdfs:comment "Beschreibt welche Ausrüstung ein Fahrzeug etc hat".
+	rdfs:comment "Beschreibt welche Ausrüstung ein Fahrzeug etc hat";
 	rdfs:domain: so:Fahrzeug;
 	rdfs:range so:Ausrüstung .
 
