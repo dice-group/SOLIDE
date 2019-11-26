@@ -82,12 +82,6 @@ so:patraeger  a owl:DatatypeProperty;
     rdfs:domain so:Einsatzkraft;
     rdfs:range xsd:integer .
 
-so:einsatzmittel a owl:DatatypeProperty;
-    rdfs:label "Einsatzmittel";
-    rdfs:comment "Einsatzmittel welche diese Einheit mitführt z.B. Türöffner";
-    rdfs:domain so:Einsatzkraft;
-    rdfs:range xsd:string .
-
 so:typ a rdf:Property;
 	rdfs:label "Typ der Einsatzkraft";
 	rdfs:comment "Der Einsatzkraft wird ein Typ zugeordnet. z.B. EWL";
