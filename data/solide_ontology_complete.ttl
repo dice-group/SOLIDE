@@ -23,7 +23,6 @@ so:nichtdisponierteEinsatzkraft rdfs:subClassOf so:Einsatzkraft;
 	rdfs:comment "Diese Klasse beschreibt nicht im TecBos dipsonierte Einsatzkräfte.".
 
 
-
 so:Einsatzort a rdfs:Class;
     rdfs:label "Einsatzort";
     rdfs:comment "Diese Klasse ist die Oberklasse aller Einsatzorte als URI damit es eindeutig ist, zb: http://dbpedia.org/resource/University_of_Paderborn". 
@@ -294,31 +293,37 @@ so:EinsatzabschnittID a rdf:Property;
 	rdfs:domain so:Einsatzabschnitt ;
 	rdfs:range xsd:string .
 
-so:funkbos a owl:DatatypeProperty;
+so:erreichbarkeit  a  owl:DatatypeProperty ;
+        rdfs:domain  so:Leiter ;
+        rdfs:label   "Kontaktmöglichkeit" , "Erreichbarkeit" , "Kontakt" ;
+        rdfs:range   xsd:string .
+
+
+so:funkbos rdfs:subPropertyOf  so:erreichbarkeit ;
 	rdfs:label "Funkrufname";
 	rdfs:comment "Nicht-normalisierter Funkname, z.B. Florian Hameln 89-12-1 oder Florian Hameln 89/12/1 oder Florian Hameln 89/12";
 	rdfs:domain so:Leiter;
 	rdfs:range xsd:string .
 
-so:TMO_4M a owl:DatatypeProperty;
+so:TMO_4M rdfs:subPropertyOf  so:erreichbarkeit ;
 	rdfs:label "Funkkanal TMO 4 Meter";
 	rdfs:comment "Funkkanal oder Rufgruppe des Abschnittsleiters";
 	rdfs:domain so:Leiter;
 	rdfs:range xsd:string .
 
-so:DMO_2M a owl:DatatypeProperty;
+so:DMO_2M rdfs:subPropertyOf  so:erreichbarkeit ;
 	rdfs:label "Funkkanal DMO 2 Meter";
 	rdfs:comment "Funkkanal oder Rufgruppe des Abschnittsleiters";
 	rdfs:domain so:Leiter;
 	rdfs:range xsd:string .
 
-so:telefon a owl:DatatypeProperty;
+so:telefon rdfs:subPropertyOf  so:erreichbarkeit ;
 	rdf:label "Telefonnummer";
 	rdf:comment "Telefonnummer des Abschnittleiters";
 	rdfs:domain so:Leiter;
 	rdfs:range xsd:string .
 
-so:mobiltelefon a owl:DatatypeProperty;
+so:mobiltelefon rdfs:subPropertyOf  so:erreichbarkeit ;
 	rdf:label "Mobilfunknummer";
 	rdf:comment "Mobilfunknummer des Abschnittleiters";
 	rdfs:domain so:Leiter;
