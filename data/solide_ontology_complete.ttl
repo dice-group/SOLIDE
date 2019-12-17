@@ -20,7 +20,13 @@ so:Einsatzkraft a rdfs:Class;
 
 so:nichtdisponierteEinsatzkraft rdfs:subClassOf so:Einsatzkraft;
 	rdfs:label "nicht disponierte Einsatzkraft";
-	rdfs:comment "Diese Klasse beschreibt nicht im TecBos dipsonierte Einsatzkräfte.".
+	rdfs:comment "Diese Klasse beschreibt nicht im TecBos disponierte Einsatzkräfte.".
+
+so:hatnichtdisponierteStaerke rdf:type owl:DatatypeProperty;
+	rdfs:label "nicht disponierte Stärke";
+	rdfs:domain so:Einsatzkraft;
+	rfds:range xsd:string;
+	rdfs:comment "Stärkemeldung einer nicht disponierten Einheit" .
 
 
 so:Einsatzort a rdfs:Class;
