@@ -486,7 +486,7 @@ so:Flugzeug rdfs:subClassOf so:Fahrzeug .
 so:Eisenbahn rdfs:subClassOf so:Fahrzeug .
 so:Rettungsdienstfahrzeug rdfs:subClassOf so:Fahrzeug .
 so:Schiff rdfs:subClassOf so:Fahrzeug .
-so:Feuerwehrfahrzeug rdfs:subClassOf so:Fahrzeug .
+so:Feuerwehrfahrzeug rdfs:subClassOf so:Einsatzkraft .
 so:Einsatzkraft rdfs:subClassOf so:Person .
 so:Einsatzkraft rdfs:subClassOf so:Fahrzeug .
 so:Fahrzeug rdfs:subClassOf so:Objekt .
