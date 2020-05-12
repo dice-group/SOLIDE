@@ -439,6 +439,10 @@ so:POI a rdfs:Class;
 	rdfs:label "POI","Point of Interest","Location", "Ort";
 	rdfs:comment "Die Klasse beschreibt wichtige, interessante Orte" .
 
+so:DeerAreaEntity ;
+	rdfs:label "Deer Area Entity","Deer Umkreis Entität";
+	rdfs:comment "Beschreibt Entitäten im Umkreis des Einsatzes, die mittels Deer fusioniert wurden" .
+
 so:naheBei a owl:DatatypeProperty;
 	rdfs:label "nahe bei", "in der Nähe von";
 	rdfs:comment "Relation zur Nähe eines POI zu Ortsangabe o.ä.";
