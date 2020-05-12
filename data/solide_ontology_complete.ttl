@@ -158,13 +158,13 @@ so:longitude a owl:DatatypeProperty;
 	rdfs:label "Längengrad", "longitude";
 	rdfs:comment "Längengrad, der dem Einsatz zugeordnet werden kann";
 	rdfs:domain so:Einsatz;
-	rdfs:range xsd:integer.
+	rdfs:range xsd:decimal.
 
 so:latitude a owl:DatatypeProperty;
 	rdfs:label "Breitengrad", "latitude";
 	rdfs:comment "Breitengrad, der dem Einsatz zugeordnet werden kann";
 	rdfs:domain so:Einsatz;
-	rdfs:range xsd:integer.
+	rdfs:range xsd:decimal.
 
 sch:streetAddress a owl:DatatypeProperty;
 	rdfs:label "Straße","Strasse";
