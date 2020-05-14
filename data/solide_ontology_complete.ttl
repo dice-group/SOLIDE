@@ -1,9 +1,13 @@
-@prefix so: <http://solide-projekt.de/ontology/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix sch: <https://schema.org/> .
+PREFIX  geoopen: <http://www.opengis.net/ont/geosparql#>
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  lgdo: <http://linkedgeodata.org/ontology/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  sor:  <http://solide-projekt.de/resource/>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  sch:  <http://schema.org/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  so:   <http://solide-projekt.de/ontology/>
 
 
 so:Stammdaten a rdfs:Class;
