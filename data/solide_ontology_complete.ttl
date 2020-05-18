@@ -9,85 +9,84 @@ PREFIX  sch:  <http://schema.org/>
 PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX  so:   <http://solide-projekt.de/ontology/>
 
-
 so:Stammdaten a rdfs:Class;
 	rdfs:label "Stammdaten";
 	rdfs:comment "Diese Klasse repräsentiert die Stammdaten. Ihr sind alle Einsätze zugeordnet".
 
 so:Einsatz a rdfs:Class;
-	rdfs:label "Einsatz";
+	rdfs:label "Einsatz","Einsätze", "Einsatzname","Einsatznamen";
 	rdfs:comment "Oberklasse aller Einsätze".
 
 so:Einsatzkraft a rdfs:Class;
-    rdfs:label "Einsatzkraft";
-    rdfs:comment "Diese Klasse ist die Oberklasse aller Einsatzkräfte, egal ob Person oder Fahrzeug". 
+    rdfs:label "Einsatzkraft","Einsatzkräfte";
+    rdfs:comment "Diese Klasse ist die Oberklasse aller Einsatzkräfte, egal ob Person oder Fahrzeug".
 
 so:nichtdisponierteEinsatzkraft rdfs:subClassOf so:Einsatzkraft;
-	rdfs:label "nicht disponierte Einsatzkraft";
+	rdfs:label "nicht disponierte Einsatzkraft","nicht disponierte Einsatzkräfte";
 	rdfs:comment "Diese Klasse beschreibt nicht im TecBos disponierte Einsatzkräfte.".
 
 so:hatnichtdisponierteStaerke rdf:type owl:DatatypeProperty;
-	rdfs:label "nicht disponierte Stärke";
+	rdfs:label "nicht disponierte Stärke", "nicht disponierte Gesamtstärke", "nicht disponierte Staerke";
 	rdfs:domain so:Einsatzkraft;
 	rdfs:range xsd:string;
 	rdfs:comment "Stärkemeldung einer nicht disponierten Einheit" .
 
 
 so:Einsatzort a rdfs:Class;
-    rdfs:label "Einsatzort";
-    rdfs:comment "Diese Klasse ist die Oberklasse aller Einsatzorte als URI damit es eindeutig ist, zb: http://dbpedia.org/resource/University_of_Paderborn". 
+    rdfs:label "Einsatzort", "Ort";
+    rdfs:comment "Diese Klasse ist die Oberklasse aller Einsatzorte als URI damit es eindeutig ist, zb: http://dbpedia.org/resource/University_of_Paderborn".
 
 
 so:hatStatus rdf:type owl:DatatypeProperty;
-	rdfs:label "Status";
+	rdfs:label "Status","hat Status","Einsatzstatus";
 	rdfs:domain so:Einsatzkraft;
 	rdfs:range xsd:integer;
 	rdfs:comment "Ein Status darf nur 1, 2,3,4 oder 5 sein".
 
 so:datumzeit rdf:type owl:DatatypeProperty;
-    rdfs:label "Datum Uhrzeit";
+    rdfs:label "Datum","Uhrzeit","Zeit";
     rdfs:comment "Dieses Datum wird gesetzt, wenn sich Merkmale einer Einheit verändern.";
     rdfs:domain so:Einsatzkraft;
     rdfs:range xsd:dateTime .
 
 so:takteinheit a owl:DatatypeProperty;
-    rdfs:label "taktische Einheit";
+    rdfs:label "taktische Einheit","taktische Einheiten";
     rdfs:comment "Nicht-normalisierter, taktischer Einheitsname, z.B. ELW 2 Florian Hameln 89-12-1";
     rdfs:domain so:Einsatzkraft;
     rdfs:range xsd:string .
 
 so:funkbos a owl:DatatypeProperty;
-    rdfs:label "Funkrufname";
+    rdfs:label "Funkrufname","funkbos","Funkname","bos","Funkrufnamen","Funknamen";
     rdfs:comment "Nicht-normalisierter Funkname, z.B. Florian Hameln 89-12-1 oder Florian Hameln 89/12/1 oder Florian Hameln 89/12";
     rdfs:domain so:Einsatzkraft;
     rdfs:range xsd:string .
 
 so:einsatzbefehl a owl:DatatypeProperty;
-    rdfs:label "Einsatzbefehl";
+    rdfs:label "Einsatzbefehl","Befehl","Einsatzbefehle","Befehle";
     rdfs:comment "Ein Befehl beschreibt die Aufgabe, die eine Einheit zu diesem Zeitpunkt zu erfüllen hat, z.B. EA2 Gemeinde Aerzen";
     rdfs:domain so:Einsatzkraft;
     rdfs:range xsd:string .
 
 so:einsatzstärkeführer  a owl:DatatypeProperty;
-    rdfs:label "Einsatzstärke der Führer";
+    rdfs:label "Einsatzstärke Führer";
     rdfs:comment "Anzahl der Führer in dieser Einheit, z.B. 1";
     rdfs:domain so:Einsatzkraft;
     rdfs:range xsd:integer .
 
 so:einsatzstärkeunterführer  a owl:DatatypeProperty;
-    rdfs:label "Einsatzstärke der Unterführer";
+    rdfs:label "Einsatzstärke Unterführer";
     rdfs:comment "Anzahl der Unterführer in dieser Einheit, z.B. 2";
     rdfs:domain so:Einsatzkraft;
     rdfs:range xsd:integer .
 
 so:einsatstärkemannschaft  a owl:DatatypeProperty;
-    rdfs:label "Einsatstärke der Mannschaft";
+    rdfs:label "Einsatstärke Mannschaft", "Mannschaftsstärke";
     rdfs:comment "Anzahl der Unterführer in dieser Einheit, z.B. 7";
     rdfs:domain so:Einsatzkraft;
     rdfs:range xsd:integer .
 
 so:patraeger  a owl:DatatypeProperty;
-    rdfs:label "Pressluftatmer","PA-Träger";
+    rdfs:label "Pressluftatmer","PA-Träger","paträger","patraeger";
     rdfs:comment "Anzahl der PA-Träger, z.B. 3";
     rdfs:domain so:Einsatzkraft;
     rdfs:range xsd:integer .
@@ -99,19 +98,19 @@ so:typ a rdf:Property;
 	rdfs:range so:Fahrzeug.
 
 so:hatEinsätze a rdf:Property;
-	rdfs:label "Hat Einsätze";
+	rdfs:label "hat Einsätze", "Einsaetze", "Einsätze", "Einsatz";
 	rdfs:comment "Stammdaten haben Einsätze";
 	rdfs:domain so:Stammdaten;
 	rdfs:range so:Einsatz.
 
 so:hatEinsatzkräfte a rdf:Property;
-	rdfs:label "Einsatzkräfte des Einsatzes";
+	rdfs:label "Einsatzkräfte des Einsatzes","hat Einsatzkräfte","hat Einsatzkraft";
 	rdfs:comment "Alle Einsatzkräfte, die einem Einsatz zugeordnet sind werden hier abgebildet";
 	rdfs:domain so:Einsatz;
 	rdfs:range so:Einsatzkraft.
 
 so:NameDerInstitution a owl:DatatypeProperty;
-	rdfs:label "Name der Institution";
+	rdfs:label "Name der Institution","Institution","Institutionen" ;
 	rdfs:comment "Der Name der Institution, die die Software einsätzt";
 	rdfs:domain so:Stammdaten;
 	rdfs:range xsd:string.
@@ -123,77 +122,47 @@ so:AdresseDerInstitution a rdf:Property;
 	rdfs:range so:Adresse.
 
 so:datumvon rdf:type owl:DatatypeProperty;
-    rdfs:label "Einsatzbeginn";
+    rdfs:label "Einsatzbeginn","Datum von", "Beginn";
     rdfs:comment "Datum und Uhrzeit an dem der Einsatz angelegt wurde";
     rdfs:domain so:Einsatz;
     rdfs:range xsd:dateTime .
 
 so:datumbis rdf:type owl:DatatypeProperty;
-    rdfs:label "Einsatzende";
+    rdfs:label "Einsatzende", "Datum bis", "Ende";
     rdfs:comment "Datum und Uhrzeit an dem der Einsatz beendet wurde";
     rdfs:domain so:Einsatz;
     rdfs:range xsd:dateTime .
 
 so:NameDesEinsatzes a owl:DatatypeProperty;
-	rdfs:label "Einsatzname", "Name des Einsatzes";
+	rdfs:label "Einsatzname", "Name des Einsatzes", "Einsatzname","Name";
 	rdfs:comment "Der Name unter dem der Einsatz geführt wird";
 	rdfs:domain so:Einsatz;
 	rdfs:range xsd:string.
 
 so:einsatzabschliessen a owl:DatatypeProperty;
-	rdfs:label "einsatzabschliessen";
+	rdfs:label "einsatzabschliessen", "Einsatz beenden","Einsatzende", "einsatzabschließen";
 	rdfs:comment "Zeigt an, ob ein Einsatz aktiv oder abgeschlossen ist";
 	rdfs:domain so:Einsatz;
 	rdfs:range xsd:integer.
 
 so:einsatztyp a owl:DatatypeProperty;
-	rdfs:label "Einsatztyp";
+	rdfs:label "Einsatztyp", "Typ des Einsatzes", "Einsatztypen";
 	rdfs:comment "Der Typ zu dem der Einsatz gehört. z.B. Autounfall";
 	rdfs:domain so:Einsatz;
 	rdfs:range xsd:string.
 
 so:hatAlarmstichwort a owl:DatatypeProperty;
-	rdfs:label "Alarmstichwort";
+	rdfs:label "Alarmstichwort", "Alarmstichworte";
 	rdfs:comment "Stichwort, das dem Einsatz zugeordnet wird";
 	rdfs:domain so:Einsatz;
 	rdfs:range xsd:string.
 
-so:longitude a owl:DatatypeProperty;
-	rdfs:label "Längengrad", "longitude";
-	rdfs:comment "Längengrad, der dem Einsatz zugeordnet werden kann";
-	rdfs:domain so:Einsatz;
-	rdfs:range xsd:decimal.
-
-so:latitude a owl:DatatypeProperty;
-	rdfs:label "Breitengrad", "latitude";
-	rdfs:comment "Breitengrad, der dem Einsatz zugeordnet werden kann";
-	rdfs:domain so:Einsatz;
-	rdfs:range xsd:decimal.
-
-sch:streetAddress a owl:DatatypeProperty;
-	rdfs:label "Straße","Strasse";
-	rdfs:comment "Adresse des Einsatzes";
-	rdfs:domain so:Einsatz;
-	rdfs:range xsd:string.
-
-sch:postalCode a owl:DatatypeProperty;
-	rdfs:label "Postleitzahl","PLZ";
-	rdfs:comment "Postleitzahl des Einsatzes";
-	rdfs:domain so:Einsatz;
-	rdfs:range xsd:string.
-
-sch:addressLocality a owl:DatatypeProperty;
-	rdfs:label "Ort","Stadt";
-	rdfs:comment "Ortsangabe postalisch des Einsatzes";
-	rdfs:domain so:Einsatz;
-	rdfs:range xsd:string.
-
 so:Nachricht a rdfs:Class;
-	rdfs:label "Nachricht";
-	rdfs:comment "Diese Klasse ist die Oberklasse aller Nachrichten" . 
+	rdfs:label "Nachricht", "Message", "Nachrichten";
+	rdfs:comment "Diese Klasse ist die Oberklasse aller Nachrichten" .
 
 so:ETB a rdfs:Class;
-	rdfs:label "ETB", "ETB-Eintrag", "Einsatztagebucheintrag";
+	rdfs:label "ETB", "ETB-Eintrag", "Einsatztagebucheintrag", "Einsatztagebucheinträge", "ETB-Einträge";
 	rdfs:comment "Diese Klasse beschreibt die Einsatztagebucheinträge" ;
 	rdfs:subClassof so:Nachricht.
 
@@ -206,7 +175,7 @@ so:Sender rdfs:subClassOf so:Kommunikator;
 	rdfs:comment "Diese Klasse ist für die Sender der Nachricht" .
 
 so:Empfaenger rdfs:subClassOf so:Kommunikator;
-	rdfs:label "Empfänger";
+	rdfs:label "Empfänger", "Empfaenger";
 	rdfs:comment "Diese Klasse ist für die Empfänger der Nachricht" .
 
 so:betreff a owl:DatatypeProperty;
@@ -216,8 +185,8 @@ so:betreff a owl:DatatypeProperty;
 	rdfs:range xsd:string .
 
 so:meldung a owl:DatatypeProperty;
-	rdfs:label "Meldung", "Email", "Meldungstext";
-	rdfs:comment "Die eigentliche Meldung oder Nachricht";
+	rdfs:label "Meldung", "Email", "Meldungstext", "Text", "Meldungen";
+	rdfs:comment "Zuordnung Meldungstext zu Nachricht";
 	rdfs:domain so:Nachricht;
 	rdfs:range xsd:string .
 
@@ -240,44 +209,44 @@ so:pressetauglich a owl:DatatypeProperty;
 	rdfs:range xsd:boolean .
 
 so:nachrichtVersenden a rdf:Property;
-	rdfs:label "Nachricht versenden";
+	rdfs:label "Nachricht versenden", "versenden", "versandt", "senden";
 	rdfs:comment "Senden einer Nachricht";
 	rdfs:domain so:Nachricht;
 	rdfs:range so:Sender .
 
 so:nachrichtEmpfangen a rdf:Property;
-	rdfs:label "Nachricht empfangen";
+	rdfs:label "Nachricht empfangen", "empfangen", "Empfang";
 	rdfs:comment "Empfangen einer Nachricht";
 	rdfs:domain so:Nachricht;
 	rdfs:range so:Empfaenger .
 
 so:zeitGesendet a owl:DatatypeProperty;
-    rdfs:label "Uhrzeit des Nachrichtenversandes";
+    rdfs:label "Uhrzeit des Nachrichtenversandes","Uhrzeit", "Zeit", "Datum";
     rdfs:comment "Dieses Datum wird gesetzt, wenn eine neue Nachricht gesendet wird";
     rdfs:domain so:Nachricht;
     rdfs:range xsd:dateTime .
 
 so:einsatzNachricht a rdf:Property;
-	rdfs:label "Nachrichten des Einsatzes", "Einsatznachricht";
+	rdfs:label "Nachrichten des Einsatzes", "Einsatznachricht", "Einsatznachrichten","Nachrichten", "Nachricht";
 	rdfs:comment "Zu jedem Einsatz gehören Meldungen/Nachrichten";
 	rdfs:domain so:Einsatz;
 	rdfs:range so:Nachricht.
 
 so:Einsatzabschnitt a rdfs:Class;
-	rdfs:label "Einsatzabschnitt";
-	rdfs:comment "Diese Klasse definiert einen Einsatzabschnitt". 
-	
+	rdfs:label "Einsatzabschnitt", "Einsatzabschnitte", "Abschnitt", "Abschnitte";
+	rdfs:comment "Diese Klasse definiert einen Einsatzabschnitt".
+
 
 so:Auftrag a rdfs:Class;
-	rdfs:label "Auftrag";
+	rdfs:label "Auftrag", "Aufträge";
 	rdfs:comment "Die Klasse definiert den Auftrag des Einsatzabschnittes" .
 
 so:Leiter a rdfs:Class;
-	rdfs:label "Leiter", "Führer";
+	rdfs:label "Leiter", "Führer", "Einsatzleiter";
 	rdfs:comment "Die Klasse definiert den Führer des Einsatzabschnittes" .
 
 so:einteilungDesEinsatzes a rdf:Property;
-	rdfs:label "Einteilung des Einsatzes","Einsatzeinteilung";
+	rdfs:label "Einteilung des Einsatzes","Einsatzeinteilung", "Einteilung";
 	rdfs:comment "Zuordnung der Einsatzabschnitte zum Einsatz";
 	rdfs:domain so:Einsatz;
 	rdfs:range so:Einsatzabschnitt.
@@ -289,70 +258,72 @@ so:hatOberabschnitt a rdf:Property;
 	rdfs:range so:Einsatzabschnitt .
 
 so:hatUnterabschnitt a rdf:Property;
+    rdfs:lael "Unterabschnitt";
+    rdfs:comment "Diese Property verbindet einen Oberabschnitt mit einem untergeordneten Einsatzabschnitt";
 	owl:inverseOf: so:hatOberabschnitt .
 
 so:EinsatzabschnittID a rdf:Property;
-	rdfs:label "EinsatzabschnittID";
+	rdfs:label "EinsatzabschnittID", "Einsatzabschnitt-ID", "ID";
 	rdfs:comment "Die ID des Einsatzabschnittes";
 	rdfs:domain so:Einsatzabschnitt ;
 	rdfs:range xsd:string .
 
 so:erreichbarkeit  a  owl:DatatypeProperty ;
         rdfs:domain  so:Leiter ;
-        rdfs:label   "Kontaktmöglichkeit" , "Erreichbarkeit" , "Kontakt" ;
+        rdfs:label   "Kontaktmöglichkeit" , "Erreichbarkeit" , "Kontakt", "erreichbar" ;
         rdfs:range   xsd:string .
 
 
 so:funkbos rdfs:subPropertyOf  so:erreichbarkeit ;
-	rdfs:label "Funkrufname";
+	rdfs:label "Funkrufname", "Funkbos", "Rufname", "Rufnamen", "Funkrufnamen";
 	rdfs:comment "Nicht-normalisierter Funkname, z.B. Florian Hameln 89-12-1 oder Florian Hameln 89/12/1 oder Florian Hameln 89/12";
 	rdfs:domain so:Leiter;
 	rdfs:range xsd:string .
 
 so:TMO_4M rdfs:subPropertyOf  so:erreichbarkeit ;
-	rdfs:label "Funkkanal TMO 4 Meter";
+	rdfs:label "Funkkanal TMO 4 Meter", "Funkkanal", "Kanal", "TMO";
 	rdfs:comment "Funkkanal oder Rufgruppe des Abschnittsleiters";
 	rdfs:domain so:Leiter;
 	rdfs:range xsd:string .
 
 so:DMO_2M rdfs:subPropertyOf  so:erreichbarkeit ;
-	rdfs:label "Funkkanal DMO 2 Meter";
+	rdfs:label "Funkkanal DMO 2 Meter", "DMO", "Funkkanal", "Kanal";
 	rdfs:comment "Funkkanal oder Rufgruppe des Abschnittsleiters";
 	rdfs:domain so:Leiter;
 	rdfs:range xsd:string .
 
 so:telefon rdfs:subPropertyOf  so:erreichbarkeit ;
-	rdf:label "Telefonnummer";
+	rdf:label "Telefonnummer", "Festnetz", "Rufnummer", "Nummer";
 	rdf:comment "Telefonnummer des Abschnittleiters";
 	rdfs:domain so:Leiter;
 	rdfs:range xsd:string .
 
 so:mobiltelefon rdfs:subPropertyOf  so:erreichbarkeit ;
-	rdf:label "Mobilfunknummer";
+	rdf:label "Mobilfunknummer", "Handynummer", "Handy-Nummer", "Mobilnummer", "Mobilfunk-Rufnummer";
 	rdf:comment "Mobilfunknummer des Abschnittleiters";
 	rdfs:domain so:Leiter;
 	rdfs:range xsd:string .
 
 so:hatAuftrag a rdf:Property;
-	rdf:label "Auftrag";
+	rdf:label "Auftrag", "Aufträge";
 	rdf:comment "Jedem Einsatzabschnitt wird ein Auftrag zugewiesen";
 	rdfs:domain so:Einsatzabschnitt;
 	rdfs:range so:Auftrag .
 
 so:hatLeiter a rdf:Property;
-	rdf:label "Abschnittsleiter","Leiter";
+	rdf:label "Abschnittsleiter","Leiter", "Einsatzleiter";
 	rdf:comment "Jeder Einsatzabschnitt hat einen Leiter";
 	rdfs:domain so:Einsatzabschnitt;
 	rdfs:range so:Leiter .
 
 so:hatEinsatzort a rdf:Property;
-	rdf:label "Einsatzort";
+	rdf:label "Einsatzort", "Ort", "Einsatzorte", "Orte";
 	rdf:comment "Jede Einsatzkraft und jeder Einsatzabschnitt ist an einem Einsatzort";
 	rdfs:domain so:Einsatzkraft, so:Einsatzabschnitt;
 	rdfs:range so:Einsatzort .
 
 so:hatEinsatzabschnitt a rdf:Property;
-	rdf:label "Einsatzabschnitt";
+	rdf:label "Einsatzabschnitt", "Abschnitt", "Abschnitte", "Einsatzabschnitte";
 	rdf:comment "Jede Einsatzkraft ist einem Einsatzabschnitt zugeordnet";
 	rdfs:domain so:Einsatzkraft;
 	rdfs:range so:Einsatzabschnitt .
@@ -382,41 +353,41 @@ so:kommentar_FH a owl:DatatypeProperty;
 	rdfs:range xsd:string .
 
 so:Mandant a rdfs:Class;
-	rdfs:label "Mandant";
+	rdfs:label "Mandant", "Mandanten";
 	rdfs:comment "Klasse der Mandanten eines Systems".
 
 so:Stabsfunktion a rdfs:Class;
-	rdfs:label "Stabsfunktion";
+	rdfs:label "Stabsfunktion", "Stabsfunktionen", "Funktion";
 	rdfs:comment "Klasse der Stabsfunktionen".
 
 so:Benutzer a rdfs:Class;
-	rdfs:label "Benutzer";
+	rdfs:label "Benutzer", "Nutzer", "Systemnutzer";
 	rdfs:comment "Klasse der Systembenutzer".
 
 so:hatStabsfunktion a rdf:Property;
-    rdfs:label "Stabsfunktionen";
+    rdfs:label "Stabsfunktionen", "Stabsfunktion", "hat Funktion";
     rdfs:comment "Bezeichnung der Stabsfunktion";
     rdfs:domain so:Einsatz;
     rdfs:range so:Stabsfunktion.
 
 so:hatBenutzer a rdf:Property;
-    rdfs:label "Benutzer des Systems";
+    rdfs:label "Benutzer des Systems", "Benutzer", "Systemnutzer";
     rdfs:comment "Bezeichnung des Benutzers";
     rdfs:domain so:Einsatz;
     rdfs:range so:Benutzer.
 
 so:istAngemeldet a rdf:Property;
-    rdfs:label "angemeldete Stabsfunktion";
+    rdfs:label "angemeldete Stabsfunktion", "angemeldet", "eingeloggt","ist angemeldet", "anmelden";
     rdfs:comment "Stabsfunktion die aktuell am System angemeldet sind";
     rdfs:domain so:Einsatz;
     rdfs:range so:Stabsfunktion.
 
 so:Schadenkonto a rdfs:Class;
-    rdfs:label "Schadenkonto";
+    rdfs:label "Schadenkonto", "Schadenkonten";
     rdfs:comment "alle Schadenkonten gehören zu dieser Klasse".
 
 so:hatSchadenkonto a rdf:Property;
-    rdfs:label "Schadenkonto";
+    rdfs:label "Schadenkonto", "Schadenkonten";
     rdfs:comment "Schadenkonto eins Einsatzabschnitts";
     rdfs:domain so:Einsatz;
     rdfs:range so:Schadenkonto.
@@ -444,17 +415,17 @@ so:POI a rdfs:Class;
 	rdfs:comment "Die Klasse beschreibt wichtige, interessante Orte" .
 
 so:DeerAreaEntity a rdfs:Class ;
-	rdfs:label "Deer Area Entity","Deer Umkreis Entität";
+	rdfs:label "Deer Area Entity","Deer Umkreis Entität", "Umkreis";
 	rdfs:comment "Beschreibt Entitäten im Umkreis des Einsatzes, die mittels Deer fusioniert wurden" .
 
 so:naheBei a owl:DatatypeProperty;
-	rdfs:label "nahe bei", "in der Nähe von";
+	rdfs:label "nahe bei", "in der Nähe", "im Umkreis", "Nähe";
 	rdfs:comment "Relation zur Nähe eines POI zu Ortsangabe o.ä.";
 	rdfs:domain so:POI;
 	rdfs:range xsd:string.
 
 so:hatAusrüstung a owl:DatatypeProperty;
-	rdfs:label "hat Ausrüstung";
+	rdfs:label "ausgerüstet", "Ausrüstung";
 	rdfs:comment "Beschreibt welche Ausrüstung ein Fahrzeug etc hat";
 	rdfs:domain: so:Fahrzeug;
 	rdfs:range so:Ausrüstung .
@@ -464,7 +435,7 @@ so:Ausrüstung a rdfs:Class;
 	rdfs:comment "Klasse der Ausrüstungsgegenstände" .
 
 so:Bombenfund rdfs:subClassOf so:Einsatz;
-    rdfs:label "Bombenfund", "Bombeneinsatz";
+    rdfs:label "Bombenfund", "Bombeneinsatz", "Bombe";
     rdfs:comment "Spezifiziert den Einsatztyp".
 
 so:Autounfall rdfs:subClassOf so:Einsatz;
