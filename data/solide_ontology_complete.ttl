@@ -38,7 +38,7 @@ so:Einsatzort a rdfs:Class;
 
 
 so:hatStatus rdf:type owl:DatatypeProperty;
-	rdfs:label "Status","hat Status","Einsatzstatus";
+	rdfs:label "Status","hat Status","Einsatzstatus", "im Einsatz";
 	rdfs:domain so:Einsatzkraft;
 	rdfs:range xsd:integer;
 	rdfs:comment "Ein Status darf nur 1, 2,3,4 oder 5 sein".
