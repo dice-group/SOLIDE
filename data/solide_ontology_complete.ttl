@@ -425,7 +425,7 @@ so:naheBei a owl:DatatypeProperty;
 	rdfs:range xsd:string.
 
 so:hatAusrüstung a owl:DatatypeProperty;
-	rdfs:label "ausgerüstet", "Ausrüstung";
+	rdfs:label "ausgerüstet", "Ausrüstung", "verfügen", "verfügt";
 	rdfs:comment "Beschreibt welche Ausrüstung ein Fahrzeug etc hat";
 	rdfs:domain: so:Fahrzeug;
 	rdfs:range so:Ausrüstung .
