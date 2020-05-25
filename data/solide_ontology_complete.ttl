@@ -293,61 +293,61 @@ so:DMO_2M rdfs:subPropertyOf  so:erreichbarkeit ;
 	rdfs:range xsd:string .
 
 so:telefon rdfs:subPropertyOf  so:erreichbarkeit ;
-	rdf:label "Telefonnummer", "Festnetz", "Rufnummer", "Nummer";
+	rdfs:label "Telefonnummer", "Festnetz", "Rufnummer", "Nummer";
 	rdf:comment "Telefonnummer des Abschnittleiters";
 	rdfs:domain so:Leiter;
 	rdfs:range xsd:string .
 
 so:mobiltelefon rdfs:subPropertyOf  so:erreichbarkeit ;
-	rdf:label "Mobilfunknummer", "Handynummer", "Handy-Nummer", "Mobilnummer", "Mobilfunk-Rufnummer";
+	rdfs:label "Mobilfunknummer", "Handynummer", "Handy-Nummer", "Mobilnummer", "Mobilfunk-Rufnummer";
 	rdf:comment "Mobilfunknummer des Abschnittleiters";
 	rdfs:domain so:Leiter;
 	rdfs:range xsd:string .
 
 so:hatAuftrag a rdf:Property;
-	rdf:label "Auftrag", "Aufträge";
+	rdfs:label "Auftrag", "Aufträge";
 	rdf:comment "Jedem Einsatzabschnitt wird ein Auftrag zugewiesen";
 	rdfs:domain so:Einsatzabschnitt;
 	rdfs:range so:Auftrag .
 
 so:hatLeiter a rdf:Property;
-	rdf:label "Abschnittsleiter","Leiter", "Einsatzleiter";
+	rdfs:label "Abschnittsleiter","Leiter", "Einsatzleiter";
 	rdf:comment "Jeder Einsatzabschnitt hat einen Leiter";
 	rdfs:domain so:Einsatzabschnitt;
 	rdfs:range so:Leiter .
 
 so:hatEinsatzort a rdf:Property;
-	rdf:label "Einsatzort", "Ort", "Einsatzorte", "Orte";
+	rdfs:label "Einsatzort", "Ort", "Einsatzorte", "Orte";
 	rdf:comment "Jede Einsatzkraft und jeder Einsatzabschnitt ist an einem Einsatzort";
 	rdfs:domain so:Einsatzkraft, so:Einsatzabschnitt;
 	rdfs:range so:Einsatzort .
 
 so:hatEinsatzabschnitt a rdf:Property;
-	rdf:label "Einsatzabschnitt", "Abschnitt", "Abschnitte", "Einsatzabschnitte";
+	rdfs:label "Einsatzabschnitt", "Abschnitt", "Abschnitte", "Einsatzabschnitte";
 	rdf:comment "Jede Einsatzkraft ist einem Einsatzabschnitt zugeordnet";
 	rdfs:domain so:Einsatzkraft;
 	rdfs:range so:Einsatzabschnitt .
 
 so:beschreibung_FH1 a owl:DatatypeProperty;
-	rdf:label "Freitextfeld 1";
+	rdfs:label "Freitextfeld 1";
 	rdf:comment "Freitextfeld 1 der Führungsharke";
 	rdfs:domain so:Einsatzabschnitt;
 	rdfs:range xsd:string .
 
 so:beschreibung_FH2 a owl:DatatypeProperty;
-	rdf:label "Freitextfeld 2";
+	rdfs:label "Freitextfeld 2";
 	rdf:comment "Freitextfeld 2 der Führungsharke";
 	rdfs:domain so:Einsatzabschnitt;
 	rdfs:range xsd:string .
 
 so:beschreibung_FH3 a owl:DatatypeProperty;
-	rdf:label "Freitextfeld 3";
+	rdfs:label "Freitextfeld 3";
 	rdf:comment "Freitextfeld 3 der Führungsharke";
 	rdfs:domain so:Einsatzabschnitt;
 	rdfs:range xsd:string .
 
 so:kommentar_FH a owl:DatatypeProperty;
-	rdf:label "Kommentarfeld";
+	rdfs:label "Kommentarfeld";
 	rdf:comment "Kommentarfeld der Führungsharke";
 	rdfs:domain so:Einsatzabschnitt;
 	rdfs:range xsd:string .
